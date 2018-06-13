@@ -1,0 +1,1 @@
+export default () => <div>Initial setup</div>

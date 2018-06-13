@@ -1,0 +1,105 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "no-tabs": "error",
+    "array-bracket-spacing": [
+      "error",
+      "always",
+      {
+        "singleValue": true,
+        "objectsInArrays": false,
+        "arraysInArrays": false
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always",
+      {
+        "arraysInObjects": false,
+        "objectsInObjects": false
+      }
+    ],
+    "arrow-parens": [
+      "error",
+      "always"
+    ],
+    "func-call-spacing": [
+      "error",
+      "never"
+    ],
+    "space-before-function-paren": [
+      "error",
+      "never"
+    ],
+    "space-before-blocks": [
+      "error",
+      "always"
+    ],
+    "space-in-parens": [
+      "error",
+      "always",
+      {
+        "exceptions": [
+          "{}",
+          "[]",
+          "()",
+          "empty"
+        ]
+      }
+    ],
+    "space-infix-ops": "error",
+    "space-unary-ops": "error",
+    "spaced-comment": [
+      "error",
+      "always"
+    ],
+    "no-multi-spaces": [
+      "error",
+      {
+        "ignoreEOLComments": true
+      }
+    ],
+    "keyword-spacing": "error"
+  }
+}
