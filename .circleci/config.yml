@@ -43,7 +43,7 @@ jobs:
               now --token $NOW_TOKEN --local-config .now/now.staging.json
               now --token $NOW_TOKEN --local-config .now/now.staging.json alias
             else
-              echo "FUFU"
+              echo "Dry run as the current branch is ${CIRCLE_BRANCH}"
             fi
 
 workflows:
@@ -57,3 +57,8 @@ workflows:
       - deploy:
           requires:
             - test
+          filters:
+            branches:
+              only:
+                - master
+                - development
