@@ -34,17 +34,17 @@ jobs:
     steps:
       - run: sudo npm install --global --unsafe-perm now
       - deploy:
-        name: deploy
-        command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            now --token $NOW_TOKEN --local-config .now/now.production.json
-            now --token $NOW_TOKEN --local-config .now/now.production.json alias
-          elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-            now --token $NOW_TOKEN --local-config .now/now.staging.json
-            now --token $NOW_TOKEN --local-config .now/now.staging.json alias
-          else
-            echo "FUFU"
-          fi
+          name: deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              now --token $NOW_TOKEN --local-config .now/now.production.json
+              now --token $NOW_TOKEN --local-config .now/now.production.json alias
+            elif [ "${CIRCLE_BRANCH}" == "development" ]; then
+              now --token $NOW_TOKEN --local-config .now/now.staging.json
+              now --token $NOW_TOKEN --local-config .now/now.staging.json alias
+            else
+              echo "FUFU"
+            fi
 
 workflows:
   version: 2
@@ -57,8 +57,3 @@ workflows:
       - deploy:
           requires:
             - test
-          filters:
-            branches:
-              only:
-                - master
-                - development
