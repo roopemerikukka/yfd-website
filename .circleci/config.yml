@@ -38,11 +38,11 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              now --token $NOW_TOKEN --local-config .now/now.production.json
-              now --token $NOW_TOKEN --local-config .now/now.production.json alias
+              now --token $NOW_TOKEN --team yfd --local-config .now/now.production.json
+              now --token $NOW_TOKEN --team yfd --local-config .now/now.production.json alias
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-              now --token $NOW_TOKEN --local-config .now/now.staging.json
-              now --token $NOW_TOKEN --local-config .now/now.staging.json alias
+              now --token $NOW_TOKEN --team yfd --local-config .now/now.staging.json
+              now --token $NOW_TOKEN --team yfd --local-config .now/now.staging.json alias
             else
               echo "Dry run as the current branch is ${CIRCLE_BRANCH}"
             fi
