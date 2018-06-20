@@ -1,4 +1,10 @@
 {
   "name": "yfd-website",
-  "alias": "stage.youngfinnishdesign.com"
+  "alias": "stage.youngfinnishdesign.com",
+  "scale": {
+    "bru1": {
+      "min": 1,
+      "max": "auto"
+    }
+  }
 }
