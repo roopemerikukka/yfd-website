@@ -42,7 +42,7 @@ jobs:
               now --token $NOW_TOKEN --team yfd --local-config .now/now.production.json alias
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
               now --token $NOW_TOKEN --team yfd --local-config .now/now.staging.json -e CONTENTFUL_SPACE_ID=${STAGING_CONTENTFUL_SPACE_ID} -e CONTENTFUL_ACCESS_TOKEN=${STAGING_CONTENTFUL_ACCESS_TOKEN}
-              now --token $NOW_TOKEN --team yfd --local-config .now/now.staging.json alias --no-verify
+              now --token $NOW_TOKEN --team yfd --local-config .now/now.staging.json alias
             else
               echo "Dry run as the current branch is ${CIRCLE_BRANCH}"
             fi
