@@ -1,10 +1,11 @@
 import React from 'react'
 import App, { Container } from 'next/app'
 import { PageTransition } from 'next-page-transitions'
-
+import { getTextStylesCss } from '../common/textStyles'
 import Loader from '../components/loader'
 import Wrapper from '../components/wrapper'
 
+const textStylesCss = getTextStylesCss()
 const TIMEOUT = 400
 
 export default class MyApp extends App {
@@ -81,8 +82,11 @@ export default class MyApp extends App {
             /* Base font styles */
             html,body {
               font-family: 'Muli', sans-serif;
-            }
+            }          
           `}</style>
+
+          {/* Global text styles */}
+          <style jsx global>{textStylesCss}</style>
         </Wrapper>
       </Container>
     )

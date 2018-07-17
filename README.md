@@ -57,3 +57,19 @@ export default class extends React.Component {
   }
 }
 ```
+
+## Text styles
+All text styles are created onece and then injected automatically to the global scope for reuse. To see availabel text styles, modify existing or add new ones see `common/textStyles.js`. Instructions on adding new text styles can be found from the file itself. Here's a simple example how to use existing text styles:
+
+```jsx
+import React from 'react'
+import { textStyles } from '../common/textStyles'
+
+export default class extends React.Component {
+  render() {
+    return (
+      <h1 className={`${textStyles.h1.className} otherClassName`}></h1>
+    )
+  }
+}
+```
