@@ -22,6 +22,9 @@ The project is automatically deployed with CircleCI. The deployment is done auto
 
 They set the env variable values for the different environments when CircleCI is automatically deploying the software. These are sotred securely inside CircleCI. Your local development environment doesn't need anything else than the env file to work.
 
+## File naming convention
+The whole project follows the `lowerCamelCase` naming convention with all files.
+
 ## Fetching data from Contentful in JS
 You should do this in the static `getInitialProps` function and by using the Contentful client. The client can be obtained like this:
 ```js

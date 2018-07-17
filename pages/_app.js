@@ -2,7 +2,7 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import { PageTransition } from 'next-page-transitions'
 
-import Loader from '../components/Loader'
+import Loader from '../components/loader'
 
 const TIMEOUT = 400
 
