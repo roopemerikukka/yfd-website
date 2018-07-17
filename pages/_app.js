@@ -5,6 +5,7 @@ import { getTextStylesCss } from '../common/textStyles'
 import Loader from '../components/loader'
 import { baseTextStyles, globalBoxSizing, globalPageTransitions, PAGE_TRANSITION_TIMEOUT } from '../common/baseStyles'
 import Wrapper from '../components/wrapper'
+import Logo from '../components/logo'
 
 const globalTextStyles = getTextStylesCss()
 
@@ -35,6 +36,7 @@ export default class MyApp extends App {
           loadingClassNames='loading-indicator'
         >
           <Wrapper>
+            <Logo />
             <Component {...pageProps} />
           </Wrapper>
         </PageTransition>
