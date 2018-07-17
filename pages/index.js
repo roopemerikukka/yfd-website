@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { createClient } from '../common/contentful'
+import { textStyles } from '../common/textStyles'
 
 export default class extends React.Component {
   static async getInitialProps({ contentfulClient }) {
@@ -11,7 +12,7 @@ export default class extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={`${textStyles.h1.className}`}>
         CONTENTFUL_SPACE_ID: { process.env.CONTENTFUL_SPACE_ID }
         <br />
         CONTENTFUL_ACCESS_TOKEN: { process.env.CONTENTFUL_ACCESS_TOKEN }
