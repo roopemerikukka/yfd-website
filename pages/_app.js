@@ -3,10 +3,10 @@ import App, { Container } from 'next/app'
 import { PageTransition } from 'next-page-transitions'
 import { getTextStylesCss } from '../common/textStyles'
 import Loader from '../components/loader'
+import { baseTextStyles, globalBoxSizing, globalPageTransitions, PAGE_TRANSITION_TIMEOUT } from '../common/baseStyles'
 import Wrapper from '../components/wrapper'
 
-const textStylesCss = getTextStylesCss()
-const TIMEOUT = 400
+const globalTextStyles = getTextStylesCss()
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -23,71 +23,33 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <Container>
-        <Wrapper>
-          <PageTransition
-            timeout={TIMEOUT}
-            classNames='page-transition'
-            loadingComponent={<Loader />}
-            loadingDelay={500}
-            loadingTimeout={{
-              enter: TIMEOUT,
-              exit: 0
-            }}
-            loadingClassNames='loading-indicator'
-          >
+        <PageTransition
+          timeout={PAGE_TRANSITION_TIMEOUT}
+          classNames='page-transition'
+          loadingComponent={<Loader />}
+          loadingDelay={500}
+          loadingTimeout={{
+            enter: PAGE_TRANSITION_TIMEOUT,
+            exit: 0
+          }}
+          loadingClassNames='loading-indicator'
+        >
+          <Wrapper>
             <Component {...pageProps} />
-          </PageTransition>
-          <style jsx global>{`
-            /* Page transitions */
-            .page-transition-enter {
-              opacity: 0;
-              transform: translate3d(0, 20px, 0);
-            }
+          </Wrapper>
+        </PageTransition>
 
-            .page-transition-enter-active {
-              opacity: 1;
-              transform: translate3d(0, 0, 0);
-              transition: opacity ${TIMEOUT}ms, transform ${TIMEOUT}ms;
-            }
+        {/* Box model */}
+        <style jsx global>{globalBoxSizing}</style>
 
-            .page-transition-exit {
-              opacity: 1;
-            }
+        {/* Base text styles, links etc. */}
+        <style jsx global>{baseTextStyles}</style>
 
-            .page-transition-exit-active {
-              opacity: 0;
-              transition: opacity ${TIMEOUT}ms;
-            }
+        {/* Text styles */}
+        <style jsx global>{globalTextStyles}</style>
 
-            .loading-indicator-appear,
-            .loading-indicator-enter {
-              opacity: 0;
-            }
-
-            .loading-indicator-appear-active,
-            .loading-indicator-enter-active {
-              opacity: 1;
-              transition: opacity ${TIMEOUT}ms;
-            }
-
-            /* Set global box sizing to border-box */
-            html {
-              box-sizing: border-box;
-            }
-
-            *, *:before, *:after {
-              box-sizing: inherit;
-            }
-
-            /* Base font styles */
-            html,body {
-              font-family: 'Muli', sans-serif;
-            }          
-          `}</style>
-
-          {/* Global text styles */}
-          <style jsx global>{textStylesCss}</style>
-        </Wrapper>
+        {/* Page transitions */}
+        <style jsx global>{globalPageTransitions}</style>
       </Container>
     )
   }

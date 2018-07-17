@@ -1,8 +1,17 @@
-export const polyfluidSizing = ( className, config, staticStyles = '' ) => {
+export const polyfluidSizing = ( textStyle ) => {
+  const { className, htmlElement, config, static: staticStyles } = textStyle || {}
+
   // Early exit if the arguments don't look even mildly valid.
-  if ( !className || className.length < 1 || !config || config.size < 1 ) {
-    return
+  if (
+    (!className && !htmlElement) ||
+    ((className && className.length) < 1 && (htmlElement && htmlElement.length < 1)) ||
+    (!config || config.size < 1)
+  ) {
+    return ''
   }
+
+  // Generate the identifier.
+  const cssIdentifier = className ? `.${className}` : htmlElement
 
   // Generate css for base prop values.
   let basePropValues = ''
@@ -12,7 +21,7 @@ export const polyfluidSizing = ( className, config, staticStyles = '' ) => {
   })
 
   let css = `
-    .${className} {
+    ${cssIdentifier} {
       ${staticStyles}
       ${basePropValues}
     }
@@ -31,7 +40,7 @@ export const polyfluidSizing = ( className, config, staticStyles = '' ) => {
 
     css += `
       @media (min-width: ${breakPoints[i]}px) {
-        .${className} {
+        ${cssIdentifier} {
           ${propValues}
         }
       }
@@ -47,7 +56,7 @@ export const polyfluidSizing = ( className, config, staticStyles = '' ) => {
 
   return css += `
     @media (min-width: ${breakPoints[breakPoints.length - 1]}px) {
-      .${className} {
+      ${cssIdentifier} {
         ${stopPropValues}
       }
     }

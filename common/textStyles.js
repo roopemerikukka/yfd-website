@@ -7,7 +7,8 @@ import { BLACK } from './colors'
  * must be repeated for all breakpoints inside a specific text style.
  * The static property can be used to set static styles for a text
  * style class. The static property only accepts a properly formatted
- * css string.
+ * css string. In the config you can either give a className or a html
+ * element name. The html element name must be given in htmlElement property.
  * 
  * Example config row:
  * [ <break-point-in-px>, new Map([[ <css-attribute-name>, <attribute-value-in-px> ]]) ]
@@ -24,6 +25,14 @@ export const textStyles = {
     ]),
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },
+  p: {
+    htmlElement: 'p',
+    config: new Map([
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 1920, new Map([[ 'font-size', 22 ]]) ],
+    ]),
+    static: `line-height: 150%; color: ${BLACK};`
+  },
 }
 
 /**
@@ -33,7 +42,7 @@ export const textStyles = {
 export const getTextStylesCss = () => {
   let css = ''
   for ( let style in textStyles ) {
-    css += polyfluidSizing( textStyles[style].className, textStyles[style].config, textStyles[style].static )
+    css += polyfluidSizing( textStyles[style] )
   }
 
   // Return a minified css string.
