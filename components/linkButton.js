@@ -1,6 +1,6 @@
 import breakpoints from '../common/breakpoints'
 import { textStyles } from '../common/textStyles'
-import { BLUE, GREEN } from '../common/colors';
+import { BLUE, WHITE } from '../common/colors';
 
 export default ({ children, link }) => (
   <a className={textStyles.linkButton.className} href={link}>
@@ -8,17 +8,17 @@ export default ({ children, link }) => (
     <style jsx>{`
       a {
         display: block;
-        padding: 1.5rem;
-        text-align: center;
-        text-decoration: none;
         user-select: none;
         cursor: pointer;
-        border: 2px solid ${GREEN};
-        transition: border .2s ease-out;
+        text-align: center;
+        text-decoration: none;
+        padding: 1.5rem;
+        transition: background-color .2s ease-out, color .2s ease-out;
       }
 
       a:hover {
-        border: 2px solid ${BLUE};
+        background-color: ${BLUE};
+        color: ${WHITE};
       }
 
       @media screen and (min-width: ${breakpoints.medium}) {
