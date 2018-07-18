@@ -51,6 +51,7 @@ export const globalBoxSizing = css`
 export const baseTextStyles = css`
   html, body {
     font-family: 'Muli', sans-serif;
+    font-size: 16px;
   }
 
   a {

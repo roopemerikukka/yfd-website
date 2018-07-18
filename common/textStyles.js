@@ -1,5 +1,5 @@
 import { polyfluidSizing } from './polyfluidSizing'
-import { BLACK } from './colors'
+import { BLACK, WHITE, GREEN } from './colors'
 
 /**
  * Configure all global text styles here by extending the array.
@@ -25,6 +25,7 @@ export const textStyles = {
     ]),
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },
+
   p: {
     htmlElement: 'p',
     config: new Map([
@@ -32,6 +33,18 @@ export const textStyles = {
       [ 1920, new Map([[ 'font-size', 22 ]]) ],
     ]),
     static: `line-height: 150%; color: ${BLACK};`
+  },
+
+  linkButton: {
+    className: 'txt-style--link-btn',
+    config: new Map([
+      [ 320, new Map([[ 'font-size', 18 ]]) ],
+      [ 768, new Map([[ 'font-size', 20 ]]) ],
+      [ 1024, new Map([[ 'font-size', 20 ]]) ],
+      [ 1280, new Map([[ 'font-size', 24 ]]) ],
+      [ 1920, new Map([[ 'font-size', 36 ]]) ],
+    ]),
+    static: `font-weight: bold; line-height: 80%; color: ${WHITE}; background-color: ${GREEN}; text-transform: uppercase;`
   },
 }
 
