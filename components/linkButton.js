@@ -14,11 +14,13 @@ export default ({ children, link }) => (
         text-decoration: none;
         padding: 1.5rem;
         transition: background-color .2s ease-out, color .2s ease-out;
+        margin-bottom: 1rem;
       }
 
       a:hover {
         background-color: ${BLUE};
         color: ${WHITE};
+        text-decoration: none;
       }
 
       @media screen and (min-width: ${breakpoints.medium}) {

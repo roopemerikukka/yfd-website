@@ -26,8 +26,8 @@ export const textStyles = {
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },
 
-  p: {
-    htmlElement: 'p',
+  copy: {
+    className: 'txt-style--copy',
     config: new Map([
       [ 320, new Map([[ 'font-size', 16 ]]) ],
       [ 1920, new Map([[ 'font-size', 22 ]]) ],
@@ -45,6 +45,33 @@ export const textStyles = {
       [ 1920, new Map([[ 'font-size', 36 ]]) ],
     ]),
     static: `font-weight: bold; line-height: 80%; color: ${WHITE}; background-color: ${GREEN}; text-transform: uppercase;`
+  },
+
+  contactCopy: {
+    className: 'txt-style--contact',
+    config: new Map([
+      [ 320, new Map([[ 'font-size', 13 ]]) ],
+      [ 1920, new Map([[ 'font-size', 14 ]]) ],
+    ]),
+    static: `line-height: 1.4; color: ${BLACK};`
+  },
+
+  contactCopySmall: {
+    className: 'txt-style--contact-small',
+    config: new Map([
+      [ 320, new Map([[ 'font-size', 10 ]]) ],
+      [ 1920, new Map([[ 'font-size', 11 ]]) ],
+    ]),
+    static: `line-height: 1.4; color: ${BLACK};`
+  },
+
+  contactTitle: {
+    className: 'txt-style--contact-title',
+    config: new Map([
+      [ 320, new Map([[ 'font-size', 13 ]]) ],
+      [ 1920, new Map([[ 'font-size', 14 ]]) ],
+    ]),
+    static: `line-height: 1; color: ${BLACK}; font-weight: bold; text-transform: uppercase;`
   },
 }
 

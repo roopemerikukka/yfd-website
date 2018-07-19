@@ -57,6 +57,7 @@ export const baseTextStyles = css`
   a {
     color: ${BLUE};
     text-decoration: none;
+    font-weight: 600;
   }
 
   a:hover {
