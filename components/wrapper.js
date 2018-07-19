@@ -35,4 +35,4 @@ export default ({ children }) => (
       }
     `}</style>
   </div>
-);
+)

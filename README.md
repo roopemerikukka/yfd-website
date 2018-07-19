@@ -26,24 +26,49 @@ They set the env variable values for the different environments when CircleCI is
 The whole project follows the `lowerCamelCase` naming convention with all files.
 
 ## Fetching data from Contentful in JS
-You should do this in the static `getInitialProps` function and by using the Contentful client. The client can be obtained like this:
+You should do this in the static `getInitialProps` function and by using the Contentful client. The client can be created like this:
+
 ```js
 import { createClient } from '../common/contentful'
 const client = createClient()
 ```
+
 And then you can call the API like this:
+
 ```js
 const entries = await client.getEntries()
 ```
-A simple full example could look like this:
-```jsx
 
+A simple full example could look like this:
+
+```jsx
 import React from 'react'
 import { createClient } from '../common/contentful'
 
 export default class extends React.Component {
-  static async getInitialProps({ contentfulClient }) {
+  static async getInitialProps() {
     const client = createClient()
+    const entries = await client.getEntries()
+    return { entries }
+  }
+
+  render() {
+    return (
+      <div>
+        Number of fetched entries: { this.props.entries.total }
+      </div>
+    )
+  }
+}
+```
+
+The client is created in the `_app.js` and passed down to all pages automatically. The same instance of the client can then be used in the `getInitialProps` of all pages just by defining it. Here's an example of that:
+
+```jsx
+import React from 'react'
+
+export default class extends React.Component {
+  static async getInitialProps({ contentfulClient }) {
     const entries = await client.getEntries()
     return { entries }
   }
@@ -72,4 +97,15 @@ export default class extends React.Component {
     )
   }
 }
+```
+
+## Converting Markdown to HTML
+The contentful API can return Markdown for text fields if set correctly. As Contentful's API can't convert Markdown directly to HTML we need to do it on our own. To do this use the utility function `markdownToHtml()` that can be imported from the `common/markdown.js` file. Here's a simple example on how to use it:
+
+```jsx
+import { markdownToHtml } from '../common/markdown'
+
+export default ({ markdown }) => (
+  <div dangerouslySetInnerHTML={{__html: markdownToHtml(markdown)} />
+)
 ```

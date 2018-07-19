@@ -1,23 +1,26 @@
 import React from 'react'
 import App, { Container } from 'next/app'
 import { PageTransition } from 'next-page-transitions'
+import { createClient } from '../common/contentful'
 import { getTextStylesCss } from '../common/textStyles'
 import { createClient } from '../common/contentful'
 import Loader from '../components/loader'
 import { baseTextStyles, globalBoxSizing, globalPageTransitions, PAGE_TRANSITION_TIMEOUT } from '../common/baseStyles'
 import Wrapper from '../components/wrapper'
 import Logo from '../components/logo'
+import Footer from '../components/siteFooter'
 
 const globalTextStyles = getTextStylesCss()
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
+    // Create the contentful client shared by all pages.
     const contentfulClient = createClient()
-    
-    let pageProps = {}
 
-    if ( Component.getInitialProps ) {
-      pageProps = await Component.getInitialProps( ctx )
+    // Call getInitalProps of pages and pass the contentful client instance.
+    let pageProps = {}
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps({ ctx, contentfulClient })
     }
 
     // Fetch site settings that are shareds by all pages.
@@ -33,6 +36,7 @@ export default class MyApp extends App {
 
   render() {
     const { Component, pageProps, siteSettings } = this.props
+    
     return (
       <Container>
         <PageTransition
@@ -44,12 +48,14 @@ export default class MyApp extends App {
             enter: PAGE_TRANSITION_TIMEOUT,
             exit: 0
           }}
-          loadingClassNames='loading-indicator'
-        >
-          <Wrapper>
-            <Logo siteSettings={siteSettings} />
-            <Component {...pageProps} />
-          </Wrapper>
+          loadingClassNames='loading-indicator'>
+          <React.Fragment>
+            <Wrapper>
+              <Logo siteSettings={siteSettings} />
+              <Component key={this.props.router.route} {...pageProps} />
+            </Wrapper>
+            <Footer siteSettings={siteSettings} />
+          </React.Fragment>
         </PageTransition>
 
         {/* Box model */}
