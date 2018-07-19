@@ -6,6 +6,7 @@ import { getTextStylesCss } from '../common/textStyles'
 import Loader from '../components/loader'
 import { baseTextStyles, globalBoxSizing, globalPageTransitions, PAGE_TRANSITION_TIMEOUT } from '../common/baseStyles'
 import Wrapper from '../components/wrapper'
+import Logo from '../components/logo'
 import Footer from '../components/siteFooter'
 
 const globalTextStyles = getTextStylesCss()
@@ -17,7 +18,7 @@ export default class MyApp extends App {
 
     // Call getInitalProps of pages and pass the contentful client instance.
     let pageProps = {}
-    if (Component.getInitialProps) {
+    if ( Component.getInitialProps ) {
       pageProps = await Component.getInitialProps({ ctx, contentfulClient })
     }
 
@@ -49,6 +50,7 @@ export default class MyApp extends App {
           loadingClassNames='loading-indicator'>
           <React.Fragment>
             <Wrapper>
+              <Logo siteSettings={siteSettings} />
               <Component key={this.props.router.route} {...pageProps} />
             </Wrapper>
             <Footer siteSettings={siteSettings} />
