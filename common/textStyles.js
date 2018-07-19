@@ -73,6 +73,17 @@ export const textStyles = {
     ]),
     static: `line-height: 1; color: ${BLACK}; font-weight: bold; text-transform: uppercase;`
   },
+
+  pageHeading: {
+    className: 'txt-style--page-heading',
+    config: new Map([
+      [ 320, new Map([[ 'font-size', 22 ]]) ],
+      [ 768, new Map([[ 'font-size', 24 ]]) ],
+      [ 1280, new Map([[ 'font-size', 32 ]]) ],
+      [ 1920, new Map([[ 'font-size', 46 ]]) ]
+    ]),
+    static: `line-height: 1; color: ${BLACK}; font-weight: bold; text-transform: uppercase; text-align: center;`
+  },
 }
 
 /**

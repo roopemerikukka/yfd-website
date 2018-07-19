@@ -1,39 +1,37 @@
+import { textStyles } from '../common/textStyles'
 import breakpoints from '../common/breakpoints'
 
-export default ({ children }) => (
-  <div className='wrapper'>
-    {children}
+export default ({ heading }) => (
+  <h1 className={`${textStyles.pageHeading.className}`}>
+    {heading}
     <style jsx>{`
-      div {
-        width: 85.2%;
-        margin: 0 auto;
-        min-height: 70vh;
+      h1 {
+       margin: 12px 0 48px 0;
       }
 
       @media screen and (min-width: ${breakpoints.medium}) {
-        div {
-          width: 66.16%;
+        h1 {
+          margin-bottom: 54px;
         }
       }
 
       @media screen and (min-width: ${breakpoints.large}) {
-        div {
-          width: 65.642%;
+        h1 {
+          margin-bottom: 50px;
         }
       }
 
       @media screen and (min-width: ${breakpoints.xlarge}) {
-        div {
-          width: 82.5%;
+        h1 {
+          margin-bottom: 78px;
         }
       }
 
       @media screen and (min-width: ${breakpoints.xxlarge}) {
-        div {
-          width: 100%;
-          max-width: 99.375em; /* 1590px / 16 = 99.375 */
+        h1 {
+          margin-bottom: 92px;
         }
       }
     `}</style>
-  </div>
+  </h1>
 )

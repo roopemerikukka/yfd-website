@@ -49,8 +49,8 @@ export default class MyApp extends App {
           }}
           loadingClassNames='loading-indicator'>
           <React.Fragment>
+            <Logo siteSettings={siteSettings} />
             <Wrapper>
-              <Logo siteSettings={siteSettings} />
               <Component key={this.props.router.route} {...pageProps} />
             </Wrapper>
             <Footer siteSettings={siteSettings} />
