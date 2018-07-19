@@ -3,7 +3,6 @@ import App, { Container } from 'next/app'
 import { PageTransition } from 'next-page-transitions'
 import { createClient } from '../common/contentful'
 import { getTextStylesCss } from '../common/textStyles'
-import { createClient } from '../common/contentful'
 import Loader from '../components/loader'
 import { baseTextStyles, globalBoxSizing, globalPageTransitions, PAGE_TRANSITION_TIMEOUT } from '../common/baseStyles'
 import Wrapper from '../components/wrapper'
@@ -19,7 +18,7 @@ export default class MyApp extends App {
 
     // Call getInitalProps of pages and pass the contentful client instance.
     let pageProps = {}
-    if (Component.getInitialProps) {
+    if ( Component.getInitialProps ) {
       pageProps = await Component.getInitialProps({ ctx, contentfulClient })
     }
 
