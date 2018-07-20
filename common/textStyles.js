@@ -84,6 +84,27 @@ export const textStyles = {
     ]),
     static: `line-height: 1; color: ${BLACK}; font-weight: bold; text-transform: uppercase; text-align: center;`
   },
+
+  cardTitle: {
+    className: 'txt-style--card-title',
+    config: new Map([
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 1280, new Map([[ 'font-size', 20 ]]) ],
+      [ 1920, new Map([[ 'font-size', 28 ]]) ]
+    ]),
+    static: `line-height: 1; font-weight: 700; text-transform: uppercase; text-decoration: none;`
+  },
+
+  cardPrice: {
+    className: 'txt-style--card-price',
+    config: new Map([
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 1280, new Map([[ 'font-size', 20 ]]) ],
+      [ 1920, new Map([[ 'font-size', 30 ]]) ]
+    ]),
+    static: `line-height: 1; font-weight: 600; text-decoration: none;`
+  },
+
 }
 
 /**
