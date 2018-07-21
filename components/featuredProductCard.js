@@ -5,7 +5,7 @@ import { BLACK, BLUE } from '../common/colors'
 
 export default ({ product }) => (
   <div className='featured-product-card'>
-    <Link route='product' params={{slug: product.fields.slug}}>
+    <Link route={`products/${product.fields.slug}`}>
       <a>
         <div className='featured-product-card__title' data-slug={product.fields.slug}>
           <h2 className={textStyles.cardTitle.className}>{product.fields.name}</h2>
