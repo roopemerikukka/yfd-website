@@ -3,8 +3,8 @@ import breakpoints from '../common/breakpoints'
 
 export default ({ products }) => (
   <ul className='featured-pu'>
-    {products.map(( product, index ) => (
-    <li key={index}><FeaturedProductCard product={product} /></li>
+    {products.map((product, index) => (
+      <li key={index}><FeaturedProductCard product={product} /></li>
     ))}
 
     <style jsx>{`

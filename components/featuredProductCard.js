@@ -17,7 +17,7 @@ export default ({ product }) => (
               ${product.fields.images[0].fields.file.url}?w=1000&h=688 1000w,
               ${product.fields.images[0].fields.file.url}?w=1280&h=880 1280w,
               ${product.fields.images[0].fields.file.url}?w=1600&h=1100 1600w,
-              ${product.fields.images[0].fields.file.url}?w=2000&h=1378 20000w,
+              ${product.fields.images[0].fields.file.url} 2000w,
               `}
               sizes=" 
               (max-width: 320px) 280px,

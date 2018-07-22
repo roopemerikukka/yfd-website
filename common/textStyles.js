@@ -89,8 +89,8 @@ export const textStyles = {
     className: 'txt-style--card-title',
     config: new Map([
       [320, new Map([['font-size', 16]])],
-      [1280, new Map([['font-size', 20]])],
-      [1920, new Map([['font-size', 28]])]
+      [1280, new Map([['font-size', 18]])],
+      [1920, new Map([['font-size', 22]])]
     ]),
     static: `line-height: 1; font-weight: 700; text-transform: uppercase; text-decoration: none;`
   },
