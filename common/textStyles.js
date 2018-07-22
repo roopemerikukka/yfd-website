@@ -113,7 +113,29 @@ export const textStyles = {
       [1280, new Map([['font-size', 22]])],
       [1920, new Map([['font-size', 24]])]
     ]),
-    static: `line-height: 1.1; font-weight: 600; text-transform: uppercase;`
+    static: `line-height: 1.1; font-weight: 700; text-transform: uppercase;`
+  },
+
+  productName: {
+    className: 'txt-style--product-title',
+    config: new Map([
+      [320, new Map([['font-size', 22]])],
+      [768, new Map([['font-size', 24]])],
+      [1280, new Map([['font-size', 32]])],
+      [1920, new Map([['font-size', 46]])]
+    ]),
+    static: `line-height: 1; font-weight: 700; text-transform: uppercase;`
+  },
+
+  productPrice: {
+    className: 'txt-style--product-price',
+    config: new Map([
+      [320, new Map([['font-size', 20]])],
+      [320, new Map([['font-size', 22]])],
+      [1280, new Map([['font-size', 30]])],
+      [1920, new Map([['font-size', 42]])]
+    ]),
+    static: `line-height: 0.8; font-weight: 600;`
   }
 
 }
