@@ -1,30 +1,34 @@
-import Link from 'next/link'
+import {Link} from '../routes'
 import breakpoints from '../common/breakpoints'
 import { textStyles } from '../common/textStyles'
 import { BLACK, BLUE } from '../common/colors'
 
 export default ({ product }) => (
-  <a className='featured-product-card'>
-    <div className='featured-product-card__title'>
-      <h2 className={textStyles.cardTitle.className}>{product.fields.name}</h2>
-      <h3 className={textStyles.cardPrice.className}>{product.fields.price}€</h3>
-    </div>
-    <img  className='featured-product-card__img' 
-          srcSet={`
-            ${product.fields.images[0].fields.file.url}?w=600&h=600 600w,
-            ${product.fields.images[0].fields.file.url}?w=1000&h=688 1000w,
-            ${product.fields.images[0].fields.file.url}?w=1280&h=880 1280w,
-            ${product.fields.images[0].fields.file.url}?w=1600&h=1100 1600w,
-            ${product.fields.images[0].fields.file.url}?w=2000&h=1378 20000w,
-          `}
-          sizes=" 
-            (max-width: 320px) 280px,
-            (max-width: 768px) 768px,
-            (max-width: 1024px) 1024px,
-            (max-width: 1280px) 1280px,
-            2000px"
-          src={`${product.fields.images[0].fields.file.url}?w=1000&h=1000`} alt={product.fields.images[0].fields.title}
-    />
+  <div className='featured-product-card'>
+    <Link route={`/products/${product.fields.slug}`}>
+      <a>
+        <div className='featured-product-card__title' data-slug={product.fields.slug}>
+          <h2 className={textStyles.cardTitle.className}>{product.fields.name}</h2>
+          <h3 className={textStyles.cardPrice.className}>{product.fields.price}€</h3>
+        </div>
+        <img  className='featured-product-card__img' 
+              srcSet={`
+              ${product.fields.images[0].fields.file.url}?w=600&h=600 600w,
+              ${product.fields.images[0].fields.file.url}?w=1000&h=688 1000w,
+              ${product.fields.images[0].fields.file.url}?w=1280&h=880 1280w,
+              ${product.fields.images[0].fields.file.url}?w=1600&h=1100 1600w,
+              ${product.fields.images[0].fields.file.url}?w=2000&h=1378 20000w,
+              `}
+              sizes=" 
+              (max-width: 320px) 280px,
+              (max-width: 768px) 768px,
+              (max-width: 1024px) 1024px,
+              (max-width: 1280px) 1280px,
+              2000px"
+              src={`${product.fields.images[0].fields.file.url}?w=1000&h=1000`} alt={product.fields.images[0].fields.title}
+              />
+        </a>
+    </Link>
     <style jsx>{`
       .featured-product-card {
         display: block;
@@ -104,5 +108,5 @@ export default ({ product }) => (
       }
 
     `}</style>
-  </a>
+  </div>
 )
