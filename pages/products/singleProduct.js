@@ -80,6 +80,10 @@ export default class extends React.Component {
             width: 100%;
           }
 
+          .product h2 {
+            margin: 0 0 ${remCalc(6)} 0;
+          }
+
           @media screen and (min-width: ${breakpoints.medium}) {
             .product {
               display: flex;
@@ -153,6 +157,10 @@ export default class extends React.Component {
 
             .product__related {
               width: 82.859848%;
+            }
+            
+            .product h2 {
+              margin: 0 0 ${remCalc(22)} 0;
             }
           }
 

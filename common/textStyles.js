@@ -32,7 +32,7 @@ export const textStyles = {
       [320, new Map([['font-size', 16]])],
       [1920, new Map([['font-size', 22]])],
     ]),
-    static: `line-height: 150%; color: ${BLACK};`
+    static: `line-height: 130%; color: ${BLACK};`
   },
 
   linkButton: {
