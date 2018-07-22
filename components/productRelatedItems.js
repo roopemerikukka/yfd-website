@@ -23,18 +23,21 @@ export default class RelatedItems extends Component {
     ]
 
     return (
-      <ul>
-        {products.map((product, index) => (
-          <li key={index}>
-            <Link route={`products/${product.slug}`}>
-              <a>
-                <h4>{product.name}</h4>
-                <img src={product.image} />
-              </a>
-            </Link>
-          </li>
-        ))}
+      <div className='related-items'>
+        <h2>More products</h2>
+        <ul>
+          {products.map((product, index) => (
+            <li key={index}>
+              <Link route={`products/${product.slug}`}>
+                <a>
+                  <h4>{product.name}</h4>
+                  <img src={product.image} />
+                </a>
+              </Link>
+            </li>
+          ))}
 
+        </ul>
         <style jsx>{`
           ul {
             list-style: none;
@@ -46,7 +49,7 @@ export default class RelatedItems extends Component {
             display: inline-block;
           }
         `}</style>
-      </ul>
+      </div>
     )
   }
 }
