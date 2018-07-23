@@ -12,7 +12,7 @@ import ProductWysiwyg from '../../components/productWysiwyg'
 import DesignerCard from '../../components/designerCard'
 import ProductRelatedItems from '../../components/productRelatedItems'
 
-export default class extends React.Component {
+export default class Product extends React.Component {
   static async getInitialProps({ ctx, contentfulClient }) {
     const slug = ctx.asPath.replace(/\/products\//gi, '')
     const product = await contentfulClient.getEntries({

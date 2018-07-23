@@ -1,23 +1,23 @@
 import React from 'react'
 import { Link } from '../../routes'
 
-export default class Products extends React.Component {
+export default class Designers extends React.Component {
   static async getInitialProps({ contentfulClient }) {
-    const products = await contentfulClient.getEntries({
-      'content_type': 'product'
+    const designers = await contentfulClient.getEntries({
+      'content_type': 'designer'
     })
-    return { products }
+    return { designers }
   }
 
   render() {
-    const { products } = this.props
+    const { designers } = this.props
     return (
       <div>
-        <h1>Our products</h1>
+        <h1>Our designers</h1>
         <ul>
-          {products.items.map((designer, index) => (
+          {designers.items.map((designer, index) => (
             <li key={index}>
-              <Link to={`/products/${designer.fields.slug}`}>
+              <Link to={`/designers/${designer.fields.slug}`}>
                 <a>
                   {designer.fields.name}
                 </a>
