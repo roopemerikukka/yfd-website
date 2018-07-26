@@ -13,8 +13,8 @@ export default ({ siteSettings }) => (
       </div>
       <div className='site-footer__right'>
         <ul className={`site-footer__nav ${textStyles.contactCopySmall.className}`}>
-          <li><a href='#'>Terms of service</a></li>
-          <li><a href='#'>Cookie policy</a></li>
+          <li><a href={siteSettings.termsOfService || '#'}>Terms of service</a></li>
+          <li><a href={siteSettings.cookiePolicy || '#'}>Cookie policy</a></li>
         </ul>
       </div>
     </div>
