@@ -73,6 +73,7 @@ export default class Product extends React.Component {
           }
 
           .product__designer {
+            width: 80%;
             margin-bottom: ${remCalc(100)};
           }
 

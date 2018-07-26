@@ -131,11 +131,31 @@ export const textStyles = {
     className: 'txt-style--product-price',
     config: new Map([
       [320, new Map([['font-size', 20]])],
-      [320, new Map([['font-size', 22]])],
+      [768, new Map([['font-size', 22]])],
       [1280, new Map([['font-size', 30]])],
       [1920, new Map([['font-size', 42]])]
     ]),
     static: `line-height: 0.8; font-weight: 600;`
+  },
+
+  designerCardTitle: {
+    className: 'txt-style--designer-card-title',
+    config: new Map([
+      [320, new Map([['font-size', 16]])],
+      [1280, new Map([['font-size', 20]])],
+      [1920, new Map([['font-size', 26]])]
+    ]),
+    static: `line-height: 0.8; font-weight: 700; text-align: center;`
+  },
+
+  designerCardTagline: {
+    className: 'txt-style--designer-card-tagline',
+    config: new Map([
+      [320, new Map([['font-size', 12]])],
+      [1280, new Map([['font-size', 14]])],
+      [1920, new Map([['font-size', 18]])]
+    ]),
+    static: `line-height: 0.8; font-weight: 400; text-transform: uppercase; text-align: center;`
   }
 
 }
