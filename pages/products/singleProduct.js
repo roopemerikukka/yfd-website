@@ -83,7 +83,9 @@ export default class Product extends React.Component {
           .product h2 {
             margin: 0 0 ${remCalc(6)} 0;
           }
+        `}</style>
 
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.medium}) {
             .product {
               display: flex;
@@ -112,7 +114,9 @@ export default class Product extends React.Component {
               text-align: center;
             }
           }
+        `}</style>
 
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.large}) {
             .product__action,
             .product__name-price,
@@ -129,7 +133,9 @@ export default class Product extends React.Component {
               width: 47.916666%; 
             }
           }
+        `}</style>
 
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.xlarge}) {
             .product__action {
               width: 39.867424%;
@@ -163,7 +169,9 @@ export default class Product extends React.Component {
               margin: 0 0 ${remCalc(22)} 0;
             }
           }
+        `}</style>
 
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.xxlarge}) {
             .product__action {
               margin-bottom: ${remCalc(92)};
@@ -178,7 +186,6 @@ export default class Product extends React.Component {
               margin-bottom: ${remCalc(152)};
             }
           }
-
         `}</style>
       </div>
     )

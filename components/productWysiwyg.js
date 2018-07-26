@@ -11,19 +11,22 @@ export default ({ content }) => (
       .product-wysiwyg :global(p) {
         margin: 0 0 ${remCalc(24)} 0;
       }
+  `}</style>
 
-      @media screen and (min-width: ${breakpoints.large}) {
-        .product-wysiwyg :global (p) {
-          margin: 0 0 ${remCalc(32)} 0;
-        }
+  <style jsx>{`
+    @media screen and (min-width: ${breakpoints.large}) {
+      .product-wysiwyg :global (p) {
+        margin: 0 0 ${remCalc(32)} 0;
       }
+    }
+  `}</style>
 
-      @media screen and (min-width: ${breakpoints.xxlarge}) {
-        .product-wysiwyg :global (p) {
-          margin: 0 0 ${remCalc(40)} 0;
-        }
+  <style jsx>{`
+    @media screen and (min-width: ${breakpoints.xxlarge}) {
+      .product-wysiwyg :global (p) {
+        margin: 0 0 ${remCalc(40)} 0;
       }
-
+    }
   `}</style>
   </div>
 )

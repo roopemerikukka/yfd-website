@@ -4,8 +4,8 @@ const Loader = () => (
   <div className='loader'>
     <style jsx>{`
       .loader {
-        border: 8px solid #f3f3f3; /* Light grey */
-        border-top: 8px solid #3498db; /* Blue */
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
         border-radius: 50%;
         width: 40px;
         height: 40px;
@@ -14,6 +14,7 @@ const Loader = () => (
         margin-right: auto;
         margin-top: 40px;
       }
+
       @keyframes spin {
         0% {
           transform: rotate(0deg);

@@ -52,7 +52,9 @@ export default class RelatedItems extends Component {
           .related-items__pu li {
             margin-bottom: ${remCalc(24)};
           }
+        `}</style>
 
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.medium}) {
             .related-items__pu {
               display: flex;
@@ -66,7 +68,9 @@ export default class RelatedItems extends Component {
               padding: 0 2.954545%;
             }
           }
-          
+        `}</style>
+
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.large}) {
             .related-items__pu {
               margin: 0 -1.934524% ${remCalc(24)};
@@ -77,7 +81,9 @@ export default class RelatedItems extends Component {
               padding: 0 2.954545%;
             }
           }
+        `}</style>
 
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.xlarge}) {
             .related-items__pu {
               margin: 0 -1.3729977% ${remCalc(24)};
@@ -88,7 +94,9 @@ export default class RelatedItems extends Component {
               padding: 0 1.3729977%;
             }
           }
+        `}</style>
 
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.xxlarge}) {
             .related-items__pu {
               margin: 0 -1.139818% ${remCalc(24)};
@@ -99,7 +107,6 @@ export default class RelatedItems extends Component {
               padding: 0 1.139818%;
             }
           }
-          
         `}</style>
       </div>
     )

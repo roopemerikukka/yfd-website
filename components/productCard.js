@@ -72,7 +72,9 @@ export default ({ name, price, slug, imageUrl }) => (
         .product-card__overlay {
           display: none;
         }
+      `}</style>
 
+      <style jsx>{`
         @media screen and (min-width: ${breakpoints.xlarge}) {
           .product-card__info {
             position: absolute;
@@ -123,9 +125,7 @@ export default ({ name, price, slug, imageUrl }) => (
           .product-card:hover .product-card__overlay {
             opacity: 1;
           }
-
         }
-
       `}</style>
     </a>
   </Link>

@@ -58,7 +58,9 @@ class Logo extends Component {
           .logo.is-page .logo__tagline {
             display: none;
           }
+        `}</style>
 
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.medium}) {
             .logo {
               padding: 120px 0 72px 0; 
@@ -74,7 +76,9 @@ class Logo extends Component {
               padding-bottom: 160px;
             }
           }
+        `}</style>
 
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.large}) {
             .logo {
               padding: 118px 0 95px 0;
@@ -87,7 +91,9 @@ class Logo extends Component {
               padding-bottom: 130px;
             }
           }
+        `}</style>
 
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.xlarge}) {
             .logo {
               padding: 287px 0 146px 0;
@@ -109,7 +115,9 @@ class Logo extends Component {
               padding-bottom: 214px;
             }
           }
+        `}</style>
 
+        <style jsx>{`
           @media screen and (min-width: ${breakpoints.xxlarge}) {
             .logo {
               padding: 352px 0 296px 0;
@@ -131,7 +139,6 @@ class Logo extends Component {
               padding-bottom: 400px;
             }
           }
-
         `}</style>
       </div>
     )

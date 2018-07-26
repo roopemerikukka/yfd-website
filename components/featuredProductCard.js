@@ -70,7 +70,9 @@ export default ({ product }) => (
         .featured-product-card__img {
           max-width: 100%;
         }
-        
+      `}</style>
+
+      <style jsx>{`
         @media screen and (min-width: ${breakpoints.large}) {
           .featured-product-card {
             display: flex;
@@ -97,7 +99,9 @@ export default ({ product }) => (
             order: 1;
           }
         }
-        
+      `}</style>
+
+      <style jsx>{`
         @media screen and (min-width: ${breakpoints.xlarge}) {
           .featured-product-card__title {
             margin-top: 32px;

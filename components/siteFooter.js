@@ -58,8 +58,10 @@ export default ({ siteSettings }) => (
         margin: 0;
         padding: 0;
         text-align: right;
-      }
+      }      
+    `}</style>
 
+    <style jsx>{`
       @media screen and (min-width: ${breakpoints.medium}) {
         .site-footer__wrap {
           width: 90%;

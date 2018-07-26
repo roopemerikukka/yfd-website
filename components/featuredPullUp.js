@@ -21,7 +21,9 @@ export default ({ products }) => (
       .featured-pu li:last-of-type {
         margin-bottom: 0;
       }
+    `}</style>
 
+    <style jsx>{`
       @media screen and (min-width: ${breakpoints.medium}) {
         .featured-pu {
           width: 82.6%;
@@ -32,13 +34,17 @@ export default ({ products }) => (
           margin-bottom: 40px;
         }
       }
+    `}</style>
 
+    <style jsx>{`
       @media screen and (min-width: ${breakpoints.large}) {
         .featured-pu li {
           margin-bottom: 70px;
         }
       }
+    `}</style>
 
+    <style jsx>{`
       @media screen and (min-width: ${breakpoints.xlarge}) {
         .featured-pu {
           display: flex;
@@ -58,7 +64,9 @@ export default ({ products }) => (
           margin-bottom: 40px;
         }
       }
+    `}</style>
 
+    <style jsx>{`
       @media screen and (min-width: ${breakpoints.xxlarge}) {
         .featured-pu {
           margin: 0 -1.761006289% 152px -1.761006289%;
@@ -68,7 +76,6 @@ export default ({ products }) => (
           padding: 1.761006289%;
         }
       }
-
     `}</style>
   </ul>
 )

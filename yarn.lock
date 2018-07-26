@@ -1416,15 +1416,15 @@ contentful-resolve-response@^1.1.4:
     lodash "^4.17.4"
 
 contentful-sdk-core@^6.0.0-beta0:
-  version "6.0.0-beta1"
-  resolved "https://registry.yarnpkg.com/contentful-sdk-core/-/contentful-sdk-core-6.0.0-beta1.tgz#4d45c7e90ed71dffcd25448ef9617d73b6e28484"
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/contentful-sdk-core/-/contentful-sdk-core-6.0.0.tgz#2b4e773de4e8195e9f286f72a3bd24bb32f41627"
   dependencies:
-    lodash "^4.17.4"
-    qs "^6.5.1"
+    lodash "^4.17.10"
+    qs "^6.5.2"
 
 contentful@^6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/contentful/-/contentful-6.1.1.tgz#75fd951257728d9de1b9a2d04b9d268a6d8d1a0d"
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/contentful/-/contentful-6.1.2.tgz#dae0512f9214238921c7c8d794989a54239d724e"
   dependencies:
     "@contentful/axios" "^0.18.0"
     contentful-resolve-response "^1.1.4"
@@ -3439,8 +3439,8 @@ node-pre-gyp@^0.10.0:
     tar "^4"
 
 nodemon@^1.17.5:
-  version "1.18.1"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.18.1.tgz#873d2f7799662c549f7ea557db6934d5cbf665d6"
+  version "1.18.3"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.18.3.tgz#46e681ee0dd1b590562e03019b4c5df234f906f9"
   dependencies:
     chokidar "^2.0.2"
     debug "^3.1.0"
@@ -3486,8 +3486,8 @@ npm-bundled@^1.0.1:
   resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.0.3.tgz#7e71703d973af3370a9591bafe3a63aca0be2308"
 
 npm-packlist@^1.1.6:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/npm-packlist/-/npm-packlist-1.1.10.tgz#1039db9e985727e464df066f4cf0ab6ef85c398a"
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/npm-packlist/-/npm-packlist-1.1.11.tgz#84e8c683cbe7867d34b1d357d893ce29e28a02de"
   dependencies:
     ignore-walk "^3.0.1"
     npm-bundled "^1.0.1"
@@ -3926,7 +3926,7 @@ qs@6.5.1:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
 
-qs@^6.5.1:
+qs@^6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 

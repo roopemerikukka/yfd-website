@@ -22,20 +22,26 @@ export default ({ children, link }) => (
         color: ${WHITE};
         text-decoration: none;
       }
+    `}</style>
 
+    <style jsx>{`
       @media screen and (min-width: ${breakpoints.medium}) {
         a {
           max-width: 308px;
           padding: 1.8rem;
         }
       }
+    `}</style>
 
+    <style jsx>{`
       @media screen and (min-width: ${breakpoints.xlarge}) {
         a {
           max-width: 421px;
         }
       }
+    `}</style>
 
+    <style jsx>{`
       @media screen and (min-width: ${breakpoints.xxlarge}) {
         a {
           max-width: 630px;
