@@ -138,6 +138,17 @@ export const textStyles = {
     static: `line-height: 0.8; font-weight: 600;`
   },
 
+  productStatus: {
+    className: 'txt-style--product-status',
+    config: new Map([
+      [320, new Map([['font-size', 16]])],
+      [768, new Map([['font-size', 18]])],
+      [1280, new Map([['font-size', 24]])],
+      [1920, new Map([['font-size', 44]])]
+    ]),
+    static: `line-height: 1; font-weight: 600;`
+  },
+
   designerCardTitle: {
     className: 'txt-style--designer-card-title',
     config: new Map([

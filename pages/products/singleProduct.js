@@ -28,7 +28,7 @@ export default class Product extends React.Component {
       <div className='product'>
         <div className='product__main'>
 
-          <ProductStatus status={product.fields.status} />
+          <ProductStatus status={product.fields.status} endDate={product.fields.nextDeadline} />
 
           <ProductImageGallery images={product.fields.images} />
 
