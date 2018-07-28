@@ -1,4 +1,3 @@
-
 import React from 'react'
 import breakpoints from '../../common/breakpoints'
 import { remCalc } from '../../common/helperFunctions'
@@ -33,7 +32,7 @@ export default class Product extends React.Component {
           <ProductImageGallery images={product.fields.images} />
 
           <div className='product__action'>
-            <ProductAction status={product.fields.status} />
+            {product.fields.showButton && <ProductAction label={product.fields.buttonLabel} url={product.fields.buttonLink} />}
           </div>
 
           <div className='product__name-price'>
