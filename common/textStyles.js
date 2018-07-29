@@ -124,7 +124,7 @@ export const textStyles = {
       [1280, new Map([['font-size', 32]])],
       [1920, new Map([['font-size', 46]])]
     ]),
-    static: `line-height: 1; font-weight: 700; text-transform: uppercase;`
+    static: `line-height: 1; font-weight: 700;`
   },
 
   productPrice: {
@@ -167,6 +167,48 @@ export const textStyles = {
       [1920, new Map([['font-size', 18]])]
     ]),
     static: `line-height: 0.8; font-weight: 400; text-transform: uppercase; text-align: center;`
+  },
+
+  designerTagline: {
+    className: 'txt-style--designer-tagline',
+    config: new Map([
+      [320, new Map([['font-size', 14]])],
+      [1280, new Map([['font-size', 16]])],
+      [1920, new Map([['font-size', 22]])]
+    ]),
+    static: `line-height: 0.8; font-weight: 400; text-transform: uppercase;`
+  },
+
+  designerWho: {
+    className: 'txt-style--designer-who',
+    config: new Map([
+      [320, new Map([['font-size', 14]])],
+      [1280, new Map([['font-size', 16]])],
+      [1920, new Map([['font-size', 22]])]
+    ]),
+    static: `line-height: 1.1; font-weight: 700; text-transform: uppercase;`
+  },
+
+  designerQuote: {
+    className: 'txt-style--designer-quote',
+    config: new Map([
+      [320, new Map([['font-size', 16]])],
+      [768, new Map([['font-size', 18]])],
+      [1024, new Map([['font-size', 20]])],
+      [1280, new Map([['font-size', 32]])],
+      [1920, new Map([['font-size', 34]])]
+    ]),
+    static: `line-height: 1.1; font-weight: 600; font-style: italic;`
+  },
+
+  designerRelated: {
+    className: 'txt-style--designer-related',
+    config: new Map([
+      [320, new Map([['font-size', 16]])],
+      [768, new Map([['font-size', 20]])],
+      [1920, new Map([['font-size', 28]])]
+    ]),
+    static: `line-height: 0.8; font-weight: 600;`
   }
 
 }

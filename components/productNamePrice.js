@@ -9,6 +9,7 @@ export default ({ name, price }) => (
     <style jsx>{`
       h1 {
         margin: 0 0 ${remCalc(8)} 0;
+        text-transform: uppercase;
       }
 
       h3 {

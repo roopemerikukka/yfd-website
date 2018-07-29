@@ -7,7 +7,7 @@ import ProductStatus from '../../components/productStatus'
 import ProductImageGallery from '../../components/productImageGallery'
 import ProductAction from '../../components/productAction'
 import ProductNamePrice from '../../components/productNamePrice'
-import ProductWysiwyg from '../../components/productWysiwyg'
+import Wysiwyg from '../../components/wysiwyg'
 import DesignerCard from '../../components/designerCard'
 import ProductRelatedItems from '../../components/productRelatedItems'
 
@@ -41,13 +41,13 @@ export default class Product extends React.Component {
 
           <div className='product__description'>
             <h2 className={textStyles.smallSectionTitle.className}>Description</h2>
-            <ProductWysiwyg content={product.fields.description} />
+            <Wysiwyg content={product.fields.description} />
           </div>
         </div>
 
         <div className='product__information'>
           <h2 className={textStyles.smallSectionTitle.className}>Product information</h2>
-          <ProductWysiwyg content={product.fields.productInformation} />
+          <Wysiwyg content={product.fields.productInformation} />
         </div>
 
         <div className='product__designer'>
