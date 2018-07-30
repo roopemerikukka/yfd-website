@@ -209,6 +209,16 @@ export const textStyles = {
       [1920, new Map([['font-size', 28]])]
     ]),
     static: `line-height: 0.8; font-weight: 600;`
+  },
+
+  peoplePuCopy: {
+    className: 'txt-style--designer-related',
+    config: new Map([
+      [320, new Map([['font-size', 14]])],
+      [1280, new Map([['font-size', 16]])],
+      [1920, new Map([['font-size', 22]])]
+    ]),
+    static: `line-height: 0.8; font-weight: 400;`
   }
 
 }
