@@ -219,6 +219,16 @@ export const textStyles = {
       [1920, new Map([['font-size', 22]])]
     ]),
     static: `line-height: 0.8; font-weight: 400;`
+  },
+
+  navLinks: {
+    className: 'txt-style--nav-links',
+    config: new Map([
+      [320, new Map([['font-size', 14]])],
+      [1280, new Map([['font-size', 14]])],
+      [1920, new Map([['font-size', 18]])]
+    ]),
+    static: `line-height: 0.8; font-weight: 700; text-transform: uppercase;`
   }
 
 }

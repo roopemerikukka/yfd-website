@@ -8,6 +8,7 @@ import { baseTextStyles, globalBoxSizing, globalPageTransitions, PAGE_TRANSITION
 import Wrapper from '../components/wrapper'
 import Logo from '../components/logo'
 import Footer from '../components/siteFooter'
+import Navigation from '../components/navigation'
 
 const globalTextStyles = getTextStylesCss()
 
@@ -30,12 +31,12 @@ export default class MyApp extends App {
     // Use the first instance of a settings page that is found.
     const siteSettings = entries.items[0].fields
 
-    return { pageProps, siteSettings, contentfulClient }
+    return { pageProps, siteSettings, contentfulClient, path: ctx.asPath }
   }
 
   render() {
-    const { Component, pageProps, siteSettings } = this.props
-    
+    const { Component, pageProps, siteSettings, path } = this.props
+  
     return (
       <Container>
         <PageTransition
@@ -49,6 +50,11 @@ export default class MyApp extends App {
           }}
           loadingClassNames='loading-indicator'>
           <React.Fragment>
+            <Navigation 
+              navLinks={siteSettings.siteNavigation} 
+              contact={siteSettings.contact}
+              path={path}
+            />
             <Logo siteSettings={siteSettings} />
             <Wrapper>
               <Component key={this.props.router.route} {...pageProps} />
