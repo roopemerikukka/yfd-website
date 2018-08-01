@@ -4,6 +4,7 @@ import Wysiwyg from '../../components/wysiwyg'
 import { textStyles } from '../../common/textStyles'
 import { remCalc } from '../../common/helperFunctions'
 import breakpoints from '../../common/breakpoints'
+import RelatedProducts from '../../components/designerRelatedItems'
 
 export default class Designer extends React.Component {
   static async getInitialProps({ ctx, contentfulClient }) {
@@ -12,10 +13,15 @@ export default class Designer extends React.Component {
       'content_type': 'designer',
       'fields.slug[in]': slug
     })
-    return { designer: designer.items[0] }
+    const relatedProducts = await contentfulClient.getEntries({
+      'content_type': 'product',
+      'links_to_entry': designer.items[0].sys.id
+    })
+
+    return { designer: designer.items[0], products: relatedProducts.items || [] }
   }
   render() {
-    const { designer } = this.props
+    const { designer, products } = this.props
     return (
       <div className='designer'>
         <div className='designer__name'>
@@ -39,7 +45,7 @@ export default class Designer extends React.Component {
 
         <div className='designer__products'>
           <h4 className={textStyles.designerRelated.className}>Products from {designer.fields.name}</h4>
-          <p>Related items here</p>
+          <RelatedProducts products={products} />
         </div>
 
         <style jsx>{`

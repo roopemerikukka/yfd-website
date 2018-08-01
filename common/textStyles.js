@@ -212,7 +212,7 @@ export const textStyles = {
   },
 
   peoplePuCopy: {
-    className: 'txt-style--designer-related',
+    className: 'txt-style--people-pu-copy',
     config: new Map([
       [320, new Map([['font-size', 14]])],
       [1280, new Map([['font-size', 16]])],
