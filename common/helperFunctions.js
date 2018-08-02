@@ -14,3 +14,11 @@ export const daysLeft = (startDay, endDay) => {
   const now = moment(startDay, 'YYYY-MM-DD')
   return now.diff(endDate, 'days') * -1
 }
+
+// Throw 404 error if the page was not found.
+// https://github.com/zeit/next.js/issues/4451
+export const notFoundError = () => {
+  const err = new Error( 'Not found error' )
+  err.code = 'ENOENT' // Triggers 404
+  return err
+}
