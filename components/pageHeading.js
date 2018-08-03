@@ -1,19 +1,20 @@
 import { textStyles } from '../common/textStyles'
 import breakpoints from '../common/breakpoints'
+import { remCalc } from '../common/helperFunctions'
 
 export default ({ heading }) => (
   <h1 className={`${textStyles.pageHeading.className}`}>
     {heading}
     <style jsx>{`
       h1 {
-       margin: 12px 0 48px 0;
+       margin: ${remCalc(12)} 0 ${remCalc(48)} 0;
       }      
     `}</style>
 
     <style jsx>{`
       @media screen and (min-width: ${breakpoints.medium}) {
         h1 {
-          margin-bottom: 54px;
+          margin-bottom: ${remCalc(54)};
         }
       }
     `}</style>
@@ -21,7 +22,7 @@ export default ({ heading }) => (
     <style jsx>{`
       @media screen and (min-width: ${breakpoints.large}) {
         h1 {
-          margin-bottom: 50px;
+          margin-bottom: ${remCalc(50)};
         }
       }
     `}</style>
@@ -29,7 +30,7 @@ export default ({ heading }) => (
     <style jsx>{`
       @media screen and (min-width: ${breakpoints.xlarge}) {
         h1 {
-          margin-bottom: 78px;
+          margin-bottom: ${remCalc(78)};
         }
       }
     `}</style>
@@ -37,7 +38,7 @@ export default ({ heading }) => (
     <style jsx>{`
       @media screen and (min-width: ${breakpoints.xxlarge}) {
         h1 {
-          margin-bottom: 92px;
+          margin-bottom: ${remCalc(92)};
         }
       }
     `}</style>
