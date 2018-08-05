@@ -26,7 +26,9 @@
     "next-page-transitions": "^1.0.0-alpha.4",
     "next-routes": "^1.4.2",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "remark": "^9.0.0",
+    "strip-markdown": "^3.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",

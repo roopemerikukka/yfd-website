@@ -7,7 +7,7 @@ export default ({ designer }) => (
   <Link to={`/designers/${designer.slug}`}>
     <a className='designer-card'>
       <img src={`${designer.profileImage.fields.file.url}?fit=fill&w=800&h=800`} alt={designer.name} />
-      <h2 className={textStyles.designerCardTitle.className}>{designer.name}</h2>
+      <h2 className={textStyles.designerCardTitle.className} itemProp='brand'>{designer.name}</h2>
       <h3 className={textStyles.designerCardTagline.className}>{designer.tagline}</h3>
 
       <style jsx>{`

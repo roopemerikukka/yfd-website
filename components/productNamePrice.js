@@ -3,8 +3,10 @@ import { remCalc } from '../common/helperFunctions'
 
 export default ({ name, price }) => (
   <div className='product-name-price'>
-    <h1 className={textStyles.productName.className}>{name}</h1>
-    <h3 className={textStyles.productPrice.className}>{price}€</h3>
+    <h1 className={textStyles.productName.className} itemProp='name'>{name}</h1>
+    <h3 className={textStyles.productPrice.className} itemScope itemType='http://schema.org/Offer'>
+      <span itemProp='price'>{price}</span> <span itemProp='priceCurrency' content='EUR'>€</span>
+    </h3>
 
     <style jsx>{`
       h1 {

@@ -1,8 +1,10 @@
 import React from 'react'
+import Head from 'next/head'
 import PageHeading from '../components/pageHeading'
 import Wysiwyg from '../components/wysiwyg'
 import { notFoundError } from '../common/helperFunctions'
 import breakpoints from '../common/breakpoints'
+import SocialMetaFields from '../components/socialMetaFields'
 
 export default class Page extends React.Component {
   static async getInitialProps({ ctx, contentfulClient }) {
@@ -11,11 +13,11 @@ export default class Page extends React.Component {
       'content_type': 'page',
       'fields.slug[in]': slug
     })
-    return { page }
+    return { page, path: ctx.asPath }
   }
 
   render() {
-    const { page } = this.props
+    const { page, siteSettings, path } = this.props
 
     // Throw 404 if page is not found
     if (page.total === 0) throw notFoundError()
@@ -23,10 +25,19 @@ export default class Page extends React.Component {
     const content = page.items[0].fields
 
     return (
-      <div className='page'>
-        <PageHeading heading={content.title} />
-        <Wysiwyg content={content.content} />
-
+      <React.Fragment>
+        <SocialMetaFields
+          title={content.title}
+          description={content.shareDescription}
+          siteSettings={siteSettings}
+          imgSrc={content.shareImage !== undefined ? content.shareImage[0].fields.file.url : undefined}
+          ogType='article'
+          path={path}
+        />
+        <div className='page'>
+          <PageHeading heading={content.title} />
+          <Wysiwyg content={content.content} />
+        </div>
         <style jsx>{`
           .page {
             margin-bottom: 4rem;
@@ -66,7 +77,7 @@ export default class Page extends React.Component {
             }
           }
         `}</style>
-      </div>
+      </React.Fragment>
     )
   }
 }

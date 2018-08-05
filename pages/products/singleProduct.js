@@ -1,6 +1,6 @@
 import React from 'react'
 import breakpoints from '../../common/breakpoints'
-import { remCalc } from '../../common/helperFunctions'
+import { remCalc, stripMarkdown } from '../../common/helperFunctions'
 import { textStyles } from '../../common/textStyles'
 
 import ProductStatus from '../../components/productStatus'
@@ -10,6 +10,7 @@ import ProductNamePrice from '../../components/productNamePrice'
 import Wysiwyg from '../../components/wysiwyg'
 import DesignerCard from '../../components/designerCard'
 import ProductRelatedItems from '../../components/productRelatedItems'
+import SocialMetaFields from '../../components/socialMetaFields'
 
 export default class Product extends React.Component {
   static async getInitialProps({ ctx, contentfulClient }) {
@@ -18,44 +19,55 @@ export default class Product extends React.Component {
       'content_type': 'product',
       'fields.slug[in]': slug
     })
-    return { product: product.items[0] }
+    return { product: product.items[0], path: ctx.asPath }
   }
 
   render() {
-    const { product } = this.props
+    const { product, siteSettings, path } = this.props
+
     return (
-      <div className='product'>
-        <div className='product__main'>
+      <React.Fragment>
+        <SocialMetaFields
+          title={product.fields.name}
+          description={`${stripMarkdown(product.fields.description).slice(0, 160)}...`}
+          siteSettings={siteSettings}
+          imgSrc={product.fields.images[0].fields.file.url}
+          ogType='product'
+          path={path}
+        />
+        <div className='product' itemScope itemType='http://schema.org/Product'>
+          <div className='product__main'>
 
-          <ProductStatus status={product.fields.status} endDate={product.fields.nextDeadline} />
+            <ProductStatus status={product.fields.status} endDate={product.fields.nextDeadline} />
 
-          <ProductImageGallery images={product.fields.images} />
+            <ProductImageGallery images={product.fields.images} />
 
-          <div className='product__action'>
-            {product.fields.showButton && <ProductAction label={product.fields.buttonLabel} url={product.fields.buttonLink} />}
+            <div className='product__action'>
+              {product.fields.showButton && <ProductAction label={product.fields.buttonLabel} url={product.fields.buttonLink} />}
+            </div>
+
+            <div className='product__name-price'>
+              <ProductNamePrice name={product.fields.name} price={product.fields.price} />
+            </div>
+
+            <div className='product__description' itemProp='description'>
+              <h2 className={textStyles.smallSectionTitle.className}>Description</h2>
+              <Wysiwyg content={product.fields.description} />
+            </div>
           </div>
 
-          <div className='product__name-price'>
-            <ProductNamePrice name={product.fields.name} price={product.fields.price} />
+          <div className='product__information'>
+            <h2 className={textStyles.smallSectionTitle.className}>Product information</h2>
+            <Wysiwyg content={product.fields.productInformation} />
           </div>
 
-          <div className='product__description'>
-            <h2 className={textStyles.smallSectionTitle.className}>Description</h2>
-            <Wysiwyg content={product.fields.description} />
+          <div className='product__designer'>
+            <DesignerCard designer={product.fields.productDesigner.fields} />
           </div>
-        </div>
 
-        <div className='product__information'>
-          <h2 className={textStyles.smallSectionTitle.className}>Product information</h2>
-          <Wysiwyg content={product.fields.productInformation} />
-        </div>
-
-        <div className='product__designer'>
-          <DesignerCard designer={product.fields.productDesigner.fields} />
-        </div>
-
-        <div className='product__related'>
-          <ProductRelatedItems />
+          <div className='product__related'>
+            <ProductRelatedItems />
+          </div>
         </div>
 
         <style jsx>{`
@@ -187,7 +199,7 @@ export default class Product extends React.Component {
             }
           }
         `}</style>
-      </div>
+      </React.Fragment>
     )
   }
 }

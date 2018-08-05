@@ -15,7 +15,7 @@ export default class extends React.Component {
       activeImgIndex: i
     })
   }
-  
+
   render() {
     const { images = [] } = this.props
     let { activeImgIndex } = this.state
@@ -25,6 +25,7 @@ export default class extends React.Component {
         {images[activeImgIndex] &&
           <img
             className='product-image-gallery__stage'
+            itemProp='image'
             srcSet={`
               ${images[activeImgIndex].fields.file.url}?w=602&h=430&fit=fill 602w,
               ${images[activeImgIndex].fields.file.url}?w=1001&h=715&fit=fill 1001w,
@@ -33,7 +34,7 @@ export default class extends React.Component {
               ${images[activeImgIndex].fields.file.url}?w=2002&h=1430&fit=fill 2002w
             `}
             sizes="100vw"
-            src={`${images[activeImgIndex].fields.file.url}?w=1001&h=715&fit=fill`} 
+            src={`${images[activeImgIndex].fields.file.url}?w=1001&h=715&fit=fill`}
             alt={images[activeImgIndex].fields.title}
           />
         }

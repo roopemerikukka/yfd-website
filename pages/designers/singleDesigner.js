@@ -2,9 +2,10 @@ import React from 'react'
 import PeoplePullUp from '../../components/peoplePullUp'
 import Wysiwyg from '../../components/wysiwyg'
 import { textStyles } from '../../common/textStyles'
-import { remCalc } from '../../common/helperFunctions'
+import { remCalc, stripMarkdown } from '../../common/helperFunctions'
 import breakpoints from '../../common/breakpoints'
 import RelatedProducts from '../../components/designerRelatedItems'
+import SocialMetaFields from '../../components/socialMetaFields'
 
 export default class Designer extends React.Component {
   static async getInitialProps({ ctx, contentfulClient }) {
@@ -18,34 +19,45 @@ export default class Designer extends React.Component {
       'links_to_entry': designer.items[0].sys.id
     })
 
-    return { designer: designer.items[0], products: relatedProducts.items || [] }
+    return { designer: designer.items[0], products: relatedProducts.items || [], path: ctx.asPath }
   }
   render() {
-    const { designer, products } = this.props
+    const { designer, products, siteSettings, path } = this.props
+
     return (
-      <div className='designer'>
-        <div className='designer__name'>
-          <h1 className={textStyles.productName.className}>{designer.fields.name}</h1>
-          <h4 className={textStyles.designerTagline.className}>{designer.fields.tagline}</h4>
-        </div>
-        <div className='designer__profile-img'>
-          <img src={designer.fields.profileImage.fields.file.url} />
-        </div>
+      <React.Fragment>
+        <SocialMetaFields
+          title={designer.fields.name}
+          description={`${stripMarkdown(designer.fields.description).slice(0, 160)}...`}
+          siteSettings={siteSettings}
+          imgSrc={designer.fields.profileImage.fields.file.url}
+          ogType='article'
+          path={path}
+        />
+        <div className='designer'>
+          <div className='designer__name'>
+            <h1 className={textStyles.productName.className}>{designer.fields.name}</h1>
+            <h4 className={textStyles.designerTagline.className}>{designer.fields.tagline}</h4>
+          </div>
+          <div className='designer__profile-img'>
+            <img src={designer.fields.profileImage.fields.file.url} />
+          </div>
 
-        <div className='designer__people'>
-          <h3 className={textStyles.designerWho.className}>Who?</h3>
-          <PeoplePullUp people={designer.fields.people} />
-        </div>
-        <div className='designer__quote'>
-          <q className={textStyles.designerQuote.className}>{designer.fields.quote}</q>
-        </div>
-        <div className='designer__description'>
-          <Wysiwyg content={designer.fields.description} />
-        </div>
+          <div className='designer__people'>
+            <h3 className={textStyles.designerWho.className}>Who?</h3>
+            <PeoplePullUp people={designer.fields.people} />
+          </div>
+          <div className='designer__quote'>
+            <q className={textStyles.designerQuote.className}>{designer.fields.quote}</q>
+          </div>
+          <div className='designer__description'>
+            <Wysiwyg content={designer.fields.description} />
+          </div>
 
-        <div className='designer__products'>
-          <h4 className={textStyles.designerRelated.className}>Products from {designer.fields.name}</h4>
-          <RelatedProducts products={products} />
+          <div className='designer__products'>
+            <h4 className={textStyles.designerRelated.className}>Products from {designer.fields.name}</h4>
+            <RelatedProducts products={products} />
+          </div>
         </div>
 
         <style jsx>{`
@@ -220,7 +232,7 @@ export default class Designer extends React.Component {
             }
           }
         `}</style>
-      </div>
+      </React.Fragment>
     )
   }
 }

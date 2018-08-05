@@ -2,32 +2,50 @@ import React from 'react'
 import breakpoints from '../../common/breakpoints'
 import PageHeading from '../../components/pageHeading'
 import ProductCard from '../../components/productCard'
+import SocialMetaFields from '../../components/socialMetaFields'
 
 export default class Products extends React.Component {
-  static async getInitialProps({ contentfulClient }) {
+  static async getInitialProps({ ctx, contentfulClient }) {
+    const slug = ctx.asPath.replace(/\//gi, '')
+
     const products = await contentfulClient.getEntries({
       'content_type': 'product'
     })
-    return { products }
+    const page = await contentfulClient.getEntries({
+      'content_type': 'page',
+      'fields.slug[in]': slug
+    })
+    return { products, page: page.items[0].fields, path: ctx.asPath }
   }
 
   render() {
-    const { products } = this.props
+    const { products, page, path, siteSettings } = this.props
     return (
-      <div className='products'>
-        <PageHeading heading='Our products' />
-        <ul>
-          {products.items.map((product, index) => (
-            <li key={index}>
-              <ProductCard
-                name={product.fields.name}
-                slug={product.fields.slug}
-                price={product.fields.price}
-                imageUrl={product.fields.images[0].fields.file.url}
-              />
-            </li>
-          ))}
-        </ul>
+      <React.Fragment>
+        <SocialMetaFields
+          title={page.title}
+          description={page.shareDescription}
+          siteSettings={siteSettings}
+          imgSrc={page.shareImage !== undefined ? page.shareImage[0].fields.file.url : undefined}
+          ogType='article'
+          path={path}
+        />
+        <div className='products'>
+          <PageHeading heading='Our products' />
+          <ul>
+            {products.items.map((product, index) => (
+              <li key={index}>
+                <ProductCard
+                  name={product.fields.name}
+                  slug={product.fields.slug}
+                  price={product.fields.price}
+                  imageUrl={product.fields.images[0].fields.file.url}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <style jsx>{`
           .products {
             width: 95%;
@@ -107,7 +125,7 @@ export default class Products extends React.Component {
             }
           }
         `}</style>
-      </div>
+      </React.Fragment>
     )
   }
 }

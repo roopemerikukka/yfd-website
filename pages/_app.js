@@ -19,7 +19,7 @@ export default class MyApp extends App {
 
     // Call getInitalProps of pages and pass the contentful client instance.
     let pageProps = {}
-    if ( Component.getInitialProps ) {
+    if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps({ ctx, contentfulClient })
     }
 
@@ -36,7 +36,7 @@ export default class MyApp extends App {
 
   render() {
     const { Component, pageProps, siteSettings, path } = this.props
-  
+
     return (
       <Container>
         <PageTransition
@@ -50,14 +50,14 @@ export default class MyApp extends App {
           }}
           loadingClassNames='loading-indicator'>
           <React.Fragment>
-            <Navigation 
-              navLinks={siteSettings.siteNavigation} 
+            <Navigation
+              navLinks={siteSettings.siteNavigation}
               contact={siteSettings.contact}
               path={path}
             />
             <Logo siteSettings={siteSettings} />
             <Wrapper>
-              <Component key={this.props.router.route} {...pageProps} />
+              <Component key={this.props.router.route} {...pageProps} siteSettings={siteSettings} />
             </Wrapper>
             <Footer siteSettings={siteSettings} />
           </React.Fragment>

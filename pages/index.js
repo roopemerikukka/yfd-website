@@ -4,6 +4,7 @@ import FeaturedPullUp from '../components/featuredPullUp'
 import PageHeading from '../components/pageHeading'
 import Wysiwyg from '../components/wysiwyg'
 import breakpoints from '../common/breakpoints'
+import SocialMetaFields from '../components/socialMetaFields'
 
 export default class extends React.Component {
   static async getInitialProps({ contentfulClient }) {
@@ -21,17 +22,27 @@ export default class extends React.Component {
   }
 
   render() {
-    const { products, content } = this.props
+    const { products, content, siteSettings } = this.props
 
     return (
-      <div className='home'>
-        {products.total > 1 ? <PageHeading heading='Our products' /> : ''}
-        <FeaturedPullUp products={products.items} />
-        {content.items.length > 0 &&
-          <div className='home__content'>
-            <Wysiwyg content={content.items[0].fields.content} />
-          </div>
-        }
+      <React.Fragment>
+        <SocialMetaFields
+          title={content.items[0].fields.title}
+          description={content.items[0].fields.shareDescription}
+          siteSettings={siteSettings}
+          imgSrc={content.items[0].fields.shareImage !== undefined ? content.items[0].fields.shareImage.fields.file.url : undefined}
+          ogType='article'
+          path='/'
+        />
+        <div className='home'>
+          {products.total > 1 ? <PageHeading heading='Our products' /> : ''}
+          <FeaturedPullUp products={products.items} />
+          {content.items.length > 0 &&
+            <div className='home__content'>
+              <Wysiwyg content={content.items[0].fields.content} />
+            </div>
+          }
+        </div>
 
         <style jsx>{`
           .home {
@@ -79,7 +90,7 @@ export default class extends React.Component {
             }
           }
         `}</style>
-      </div>
+      </React.Fragment>
     )
   }
 }
