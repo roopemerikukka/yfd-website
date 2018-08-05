@@ -8,43 +8,11 @@ export default ({ label, url }) => (
 
     <style jsx>{`
       .product-action {
-        margin: ${remCalc(16)} 0 0 0;
+        margin: 0;
       }
 
       .product-action :global(a) {
         margin-bottom: 0;
-      }
-    `}</style>
-
-    <style jsx>{`
-      @media screen and (min-width: ${breakpoints.medium}) {
-        .product-action {
-          margin-top: ${remCalc(20)};
-        }        
-      }
-    `}</style>
-
-    <style jsx>{`
-      @media screen and (min-width: ${breakpoints.large}) {
-        .product-action {
-          margin-top: ${remCalc(28)};
-        }
-      }
-    `}</style>
-
-    <style jsx>{`
-      @media screen and (min-width: ${breakpoints.xlarge}) {
-        .product-action {
-          margin-top: ${remCalc(32)};
-        }
-      }
-    `}</style>
-
-    <style jsx>{`
-      @media screen and (min-width: ${breakpoints.xxlarge}) {
-        .product-action {
-          margin-top: ${remCalc(56)};
-        }
       }
     `}</style>
   </div>
