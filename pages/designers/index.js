@@ -1,6 +1,9 @@
 import React from 'react'
-import { Link } from '../../routes'
 import SocialMetaFields from '../../components/socialMetaFields'
+import DesignerPullUp from '../../components/designerPullUp'
+import PageHeading from '../../components/pageHeading'
+import Wysiwyg from '../../components/wysiwyg'
+import breakpoints from '../../common/breakpoints'
 
 export default class Designers extends React.Component {
   static async getInitialProps({ ctx, contentfulClient }) {
@@ -18,30 +21,40 @@ export default class Designers extends React.Component {
 
   render() {
     const { designers, page, path, siteSettings } = this.props
+
     return (
       <React.Fragment>
-        <SocialMetaFields
-          title={page.title}
-          description={page.shareDescription}
-          siteSettings={siteSettings}
-          imgSrc={page.shareImage !== undefined ? page.shareImage[0].fields.file.url : undefined}
-          ogType='article'
-          path={path}
-        />
-        <div>
-          <h1>Our designers</h1>
-          <ul>
-            {designers.items.map((designer, index) => (
-              <li key={index}>
-                <Link to={`/designers/${designer.fields.slug}`}>
-                  <a>
-                    {designer.fields.name}
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div className='page'>
+          <SocialMetaFields
+            title={page.title}
+            description={page.shareDescription}
+            siteSettings={siteSettings}
+            imgSrc={page.shareImage !== undefined ? page.shareImage[0].fields.file.url : undefined}
+            ogType='article'
+            path={path}
+          />
+          <PageHeading heading={page.title} />
+          <Wysiwyg content={page.content} />
+
+          <style jsx>{`
+            @media screen and (min-width: ${breakpoints.medium}) {
+              .page {
+                width: 82.6%;
+                margin: 0 auto;
+              }
+            }
+          `}</style>
+
+          <style jsx>{`
+            @media screen and (min-width: ${breakpoints.large}) {
+              .page {
+                width: 65.5%;
+                margin: 0 auto;
+              }
+            }
+          `}</style>
         </div>
+        <DesignerPullUp designers={designers.items} />
       </React.Fragment>
     )
   }

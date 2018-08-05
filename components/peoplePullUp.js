@@ -37,7 +37,7 @@ export default ({ people }) => (
     `}</style>
 
     <style jsx>{`
-      @media screen and (min-width: ${breakpoints.xlarge}) {
+      @media screen and (min-width: ${breakpoints.xxlarge}) {
         .people-pu li {
           margin-bottom: ${remCalc(22)};
         }

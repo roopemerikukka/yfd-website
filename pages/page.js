@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import PageHeading from '../components/pageHeading'
 import Wysiwyg from '../components/wysiwyg'
 import { notFoundError } from '../common/helperFunctions'
