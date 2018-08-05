@@ -1,6 +1,6 @@
 import React from 'react'
 import breakpoints from '../../common/breakpoints'
-import { remCalc, stripMarkdown } from '../../common/helperFunctions'
+import { remCalc, stripMarkdown, shuffleArray } from '../../common/helperFunctions'
 import { textStyles } from '../../common/textStyles'
 
 import ProductStatus from '../../components/productStatus'
@@ -13,17 +13,26 @@ import ProductRelatedItems from '../../components/productRelatedItems'
 import SocialMetaFields from '../../components/socialMetaFields'
 
 export default class Product extends React.Component {
-  static async getInitialProps({ ctx, contentfulClient }) {
+  static async getInitialProps({ ctx, contentfulClient }) {    
     const slug = ctx.asPath.replace(/\/products\//gi, '')
     const product = await contentfulClient.getEntries({
       'content_type': 'product',
       'fields.slug[in]': slug
     })
-    return { product: product.items[0], path: ctx.asPath }
+
+    let relatedProducts = await contentfulClient.getEntries({
+      'content_type': 'product',
+      'sys.id[ne]': product.items[0].sys.id
+    })
+
+    // Suffle the related products to create dynamicity and get the first three
+    relatedProducts.items = shuffleArray(relatedProducts.items).slice(0, 3)
+
+    return { product: product.items[0], relatedProducts: relatedProducts.items, path: ctx.asPath }
   }
 
   render() {
-    const { product, siteSettings, path } = this.props
+    const { product, siteSettings, path, relatedProducts } = this.props
 
     return (
       <React.Fragment>
@@ -66,7 +75,7 @@ export default class Product extends React.Component {
           </div>
 
           <div className='product__related'>
-            <ProductRelatedItems />
+            <ProductRelatedItems relatedProducts={relatedProducts} />
           </div>
         </div>
 

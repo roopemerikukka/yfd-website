@@ -5,39 +5,19 @@ import ProductCard from '../components/productCard'
 
 export default class RelatedItems extends Component {
   render() {
-
-    const products = [
-      {
-        name: 'Airy Table Lamp',
-        slug: 'airy-table-lamp',
-        price: '299',
-        image: '//images.ctfassets.net/3axna8x95z40/bjms7oRsjY0QEeycEcGs8/f4cf93f9aea46f1052fa67497b796a0e/clothing-rack_2600x1792-compressor.jpg'
-      },
-      {
-        name: 'Coat hanger extraordinnaire with long name',
-        slug: 'airy-table-lamp',
-        price: '2310',
-        image: '//images.ctfassets.net/3axna8x95z40/2ZwbsPEdA42eKEq6kgG4m8/b8ad85a37d76bdf13ec64efb355b5fa2/airy_2002x1377-compressed.jpg'
-      },
-      {
-        name: 'Super sofa',
-        slug: 'airy-table-lamp',
-        price: '399',
-        image: '//images.ctfassets.net/3axna8x95z40/1zLATueB5KgwqyI64WooYI/cebadaa11593ae9bf8b3b8daa9273663/tuotekuvavalo2.jpg'
-      }
-    ]
+    const { relatedProducts } = this.props
 
     return (
       <div className='related-items'>
         <h2>More products</h2>
         <ul className='related-items__pu'>
-          {products.map((product, index) => (
+          {relatedProducts.map((product, index) => (
             <li key={index}>
               <ProductCard
-                name={product.name}
-                slug={product.slug}
-                price={product.price}
-                imageUrl={product.image}
+                name={product.fields.name}
+                slug={product.fields.slug}
+                price={product.fields.price}
+                imageUrl={product.fields.images[0].fields.file.url}
               />
             </li>
           ))}

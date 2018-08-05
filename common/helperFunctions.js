@@ -39,3 +39,12 @@ export const stripMarkdown = (markdownString = '') => {
     })
   return resultString
 }
+
+/**
+ * Suffles an array into a random order.
+ * @param {Array} arr 
+ */
+export const shuffleArray = arr => arr
+  .map(a => [Math.random(), a])
+  .sort((a, b) => a[0] - b[0])
+  .map(a => a[1]);
