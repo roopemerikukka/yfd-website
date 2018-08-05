@@ -5,6 +5,7 @@ import Wysiwyg from '../components/wysiwyg'
 import { notFoundError } from '../common/helperFunctions'
 import breakpoints from '../common/breakpoints'
 import SocialMetaFields from '../components/socialMetaFields'
+import YfdPeople from '../components/yfdPeople'
 
 export default class Page extends React.Component {
   static async getInitialProps({ ctx, contentfulClient }) {
@@ -14,6 +15,15 @@ export default class Page extends React.Component {
       'fields.slug[in]': slug
     })
     return { page, path: ctx.asPath }
+  }
+
+  extraComponent(additionalComponent) {
+    switch (additionalComponent) {
+      case 'YFD-people':
+        return <YfdPeople people={this.props.siteSettings.yfdPeople} />
+      default:
+        return null
+    }
   }
 
   render() {
@@ -37,6 +47,7 @@ export default class Page extends React.Component {
         <div className='page'>
           <PageHeading heading={content.title} />
           <Wysiwyg content={content.content} />
+          {this.extraComponent(content.additionalComponent)}
         </div>
         <style jsx>{`
           .page {

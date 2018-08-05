@@ -211,7 +211,7 @@ export const textStyles = {
       [1280, new Map([['font-size', 14]])],
       [1920, new Map([['font-size', 18]])]
     ]),
-    static: `line-height: 0.8; font-weight: 400; text-transform: uppercase; text-align: center;`
+    static: `line-height: 0.8; font-weight: 400; text-align: center;`
   },
 
   designerTagline: {

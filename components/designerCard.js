@@ -23,6 +23,7 @@ export default ({ designer }) => (
           margin: 0;
           color: black;
           transition: color 0.12s ease-in;
+          text-transform: uppercase;
         }
 
         .designer-card:hover {
