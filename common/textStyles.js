@@ -15,13 +15,58 @@ import { BLACK, WHITE, GREEN } from './colors'
  */
 export const textStyles = {
   h1: {
-    className: 'txt-style--h1',
+    htmlElement: '.wysiwyg h1',
     config: new Map([
       [320, new Map([['font-size', 30]])],
       [768, new Map([['font-size', 36]])],
       [1024, new Map([['font-size', 40]])],
       [1280, new Map([['font-size', 56]])],
       [1920, new Map([['font-size', 68]])],
+    ]),
+    static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
+  },
+
+  h2: {
+    htmlElement: '.wysiwyg h2',
+    config: new Map([
+      [320, new Map([['font-size', 30]])],
+      [768, new Map([['font-size', 32]])],
+      [1024, new Map([['font-size', 34]])],
+      [1280, new Map([['font-size', 48]])],
+      [1920, new Map([['font-size', 58]])],
+    ]),
+    static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
+  },
+
+  h3: {
+    htmlElement: '.wysiwyg h3',
+    config: new Map([
+      [320, new Map([['font-size', 26]])],
+      [768, new Map([['font-size', 28]])],
+      [1024, new Map([['font-size', 28]])],
+      [1280, new Map([['font-size', 42]])],
+      [1920, new Map([['font-size', 46]])],
+    ]),
+    static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
+  },
+
+  h4: {
+    htmlElement: '.wysiwyg h4',
+    config: new Map([
+      [320, new Map([['font-size', 18]])],
+      [768, new Map([['font-size', 24]])],
+      [1024, new Map([['font-size', 26]])],
+      [1280, new Map([['font-size', 38]])]
+    ]),
+    static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
+  },
+
+  h5: {
+    htmlElement: '.wysiwyg h5',
+    config: new Map([
+      [320, new Map([['font-size', 16]])],
+      [768, new Map([['font-size', 20]])],
+      [1024, new Map([['font-size', 26]])]
     ]),
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },

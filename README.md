@@ -109,3 +109,21 @@ export default ({ markdown }) => (
   <div dangerouslySetInnerHTML={{__html: markdownToHtml(markdown)} />
 )
 ```
+
+The markdown parser can be extended with custom syntax. These additional configurations should be done to the `common/markdown.js` file. Currently the parser supports the followind custom markdown syntaxes:
+- box
+
+### box
+
+With the following markdown input:
+```markdown
+::: box
+This is additional *markdown* text.
+:::
+```
+The output is:
+```html
+<div class="wysiwyg__box">
+  <p>This is additional <i>markdown</i> text.</p>
+</div>
+```
