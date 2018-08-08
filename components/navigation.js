@@ -46,7 +46,7 @@ export default class Navigation extends React.Component {
               <ul className='nav__links'>
                 {navLinks.map((navigationLink, index) => (
                   <li key={index}>
-                    <Link scroll={false} to={navigationLink.fields.slug === 'home' ? '/' : `/${navigationLink.fields.slug}`}>
+                    <Link prefetch scroll={false} to={navigationLink.fields.slug === 'home' ? '/' : `/${navigationLink.fields.slug}`}>
                       <a className={`${textStyles.navLinks.className} ${currentPath === navigationLink.fields.slug ? 'is-active' : ''}`} onClick={() => { this.menuToggle() }}>{navigationLink.fields.title}</a>
                     </Link>
                   </li>
