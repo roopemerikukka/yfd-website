@@ -8,7 +8,7 @@ export default ({ designers }) => (
   <ul className='designer-pu'>
     {designers.map((designer, index) => (
       <li className={textStyles.peoplePuCopy} key={index}>
-        <Link to={`/designers/${designer.fields.slug}`}>
+        <Link scroll={false} to={`/designers/${designer.fields.slug}`}>
           <a>
             <img
               itemProp='image'

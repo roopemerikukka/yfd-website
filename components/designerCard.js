@@ -4,7 +4,7 @@ import breakpoints from '../common/breakpoints'
 import { remCalc } from '../common/helperFunctions'
 
 export default ({ designer }) => (
-  <Link to={`/designers/${designer.slug}`}>
+  <Link scroll={false} to={`/designers/${designer.slug}`}>
     <a className='designer-card'>
       <img src={`${designer.profileImage.fields.file.url}?fit=fill&w=800&h=800`} alt={designer.name} />
       <h2 className={textStyles.designerCardTitle.className} itemProp='brand'>{designer.name}</h2>

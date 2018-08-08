@@ -1,38 +1,35 @@
 import css from 'styled-jsx/css'
-import { BLACK, BLUE } from './colors'
+import { BLUE } from './colors'
+import { BEZIER_SLOWER } from './bezierFunctions'
 
-// Global styles related to page transitions.
-export const PAGE_TRANSITION_TIMEOUT = 400
 export const globalPageTransitions = css`
-  .page-transition-enter {
+  .page-transition-enter .wrapper {
     opacity: 0;
-    transform: translate3d(0, 20px, 0);
+    transform: translateY(20px);
   }
 
-  .page-transition-enter-active {
+  .page-transition-enter-active .wrapper {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
-    transition: opacity ${PAGE_TRANSITION_TIMEOUT}ms, transform ${PAGE_TRANSITION_TIMEOUT}ms;
+    transform: translateY(0);
+    transition: opacity 430ms ${BEZIER_SLOWER}, transform 430ms ${BEZIER_SLOWER};
   }
 
-  .page-transition-exit {
+  .page-transition-enter-done .wrapper {
     opacity: 1;
   }
 
-  .page-transition-exit-active {
+  .page-transition-exit .wrapper {
+    opacity: 1;
+  }
+
+  .page-transition-exit-active .wrapper {
     opacity: 0;
-    transition: opacity ${PAGE_TRANSITION_TIMEOUT}ms;
+    transform: translateY(20px);
+    transition: opacity 430ms ${BEZIER_SLOWER}, transform 430ms ${BEZIER_SLOWER};
   }
 
-  .loading-indicator-appear,
-  .loading-indicator-enter {
+  .page-transition-exit-done .wrapper {
     opacity: 0;
-  }
-
-  .loading-indicator-appear-active,
-  .loading-indicator-enter-active {
-    opacity: 1;
-    transition: opacity ${PAGE_TRANSITION_TIMEOUT}ms;
   }
 `
 

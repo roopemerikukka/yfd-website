@@ -2,23 +2,32 @@ import { GRAY } from '../common/colors'
 import { textStyles } from '../common/textStyles'
 import breakpoints from '../common/breakpoints'
 import { markdownToHtml } from '../common/markdown'
+import { Link } from '../routes'
 
 export default ({ siteSettings }) => (
   <footer className='site-footer'>
     <div className='site-footer__wrap'>
       <div className='site-footer__left'>
         <h3 className={textStyles.contactTitle}>Contact</h3>
-        <div dangerouslySetInnerHTML={{__html: markdownToHtml(siteSettings.contact)}} className={`site-footer__md-content ${textStyles.contactCopy.className}`} />
+        <div dangerouslySetInnerHTML={{ __html: markdownToHtml(siteSettings.contact) }} className={`site-footer__md-content ${textStyles.contactCopy.className}`} />
         <p className={`site-footer__social-links ${textStyles.contactCopy.className}`}>You can also find us on <a href={siteSettings.facebook}>Facebook</a> and <a href={siteSettings.instagram}>Instagram</a></p>
       </div>
       <div className='site-footer__right'>
         <ul className={`site-footer__nav ${textStyles.contactCopySmall.className}`}>
-          <li><a href={siteSettings.termsOfService || '#'}>Terms of service</a></li>
-          <li><a href={siteSettings.cookiePolicy || '#'}>Cookie policy</a></li>
+          <li>
+            <Link scroll={false} to={siteSettings.termsOfService || '#'}>
+              <a>Terms of service</a>
+            </Link>
+          </li>
+          <li>
+            <Link scroll={false} to={siteSettings.cookiePolicy || '#'}>
+              <a>Cookie policy</a>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
-    
+
     <style jsx>{`
       .site-footer {
         background-color: ${GRAY};

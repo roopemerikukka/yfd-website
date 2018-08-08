@@ -4,7 +4,7 @@ import { textStyles } from '../common/textStyles'
 import { BLACK, BLUE } from '../common/colors'
 
 export default ({ product }) => (
-  <Link route={`/products/${product.fields.slug}`}>
+  <Link scroll={false} route={`/products/${product.fields.slug}`}>
     <a className='featured-product-card'>
       <div className='featured-product-card__title'>
         <h2 className={textStyles.cardTitle.className}>{product.fields.name}</h2>

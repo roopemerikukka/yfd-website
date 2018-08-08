@@ -5,7 +5,7 @@ import { remCalc } from '../common/helperFunctions'
 import breakpoints from '../common/breakpoints'
 
 export default ({ name, price, slug, imageUrl }) => (
-  <Link route={`/products/${slug}`}>
+  <Link scroll={false} route={`/products/${slug}`}>
     <a className='product-card'>
       <img  className='product-card__img' 
             srcSet={`

@@ -3,7 +3,6 @@ import App, { Container } from 'next/app'
 import { PageTransition } from 'next-page-transitions'
 import { createClient } from '../common/contentful'
 import { getTextStylesCss } from '../common/textStyles'
-import Loader from '../components/loader'
 import { baseTextStyles, globalBoxSizing, globalPageTransitions, PAGE_TRANSITION_TIMEOUT } from '../common/baseStyles'
 import Wrapper from '../components/wrapper'
 import Logo from '../components/logo'
@@ -39,23 +38,17 @@ export default class MyApp extends App {
 
     return (
       <Container>
-        <PageTransition
-          timeout={PAGE_TRANSITION_TIMEOUT}
-          classNames='page-transition'
-          loadingComponent={<Loader />}
-          loadingDelay={500}
-          loadingTimeout={{
-            enter: PAGE_TRANSITION_TIMEOUT,
-            exit: 0
-          }}
-          loadingClassNames='loading-indicator'>
+
+        <Navigation
+          navLinks={siteSettings.siteNavigation}
+          contact={siteSettings.contact}
+          path={path}
+        />
+
+        <Logo siteSettings={siteSettings} />
+
+        <PageTransition timeout={800} classNames='page-transition'>
           <React.Fragment>
-            <Navigation
-              navLinks={siteSettings.siteNavigation}
-              contact={siteSettings.contact}
-              path={path}
-            />
-            <Logo siteSettings={siteSettings} />
             <Wrapper>
               <Component key={this.props.router.route} {...pageProps} siteSettings={siteSettings} />
             </Wrapper>

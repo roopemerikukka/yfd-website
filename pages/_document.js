@@ -2,8 +2,8 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
-  static async getInitialProps( ctx ) {
-    const initialProps = await Document.getInitialProps( ctx )
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps }
   }
 
@@ -23,6 +23,7 @@ export default class MyDocument extends Document {
           <link rel="manifest" href="/static/site.webmanifest" />
           <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#000000" />
           <link rel="shortcut icon" href="/static/favicon.ico" />
+          <link rel='stylesheet' type='text/css' href='/static/nprogress.css' />
           <meta name="msapplication-TileColor" content="#000000" />
           <meta name="msapplication-config" content="/static/browserconfig.xml" />
           <meta name="theme-color" content="#ffffff" />

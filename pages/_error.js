@@ -15,7 +15,7 @@ export default class Error extends React.Component {
             ? `An error ${this.props.statusCode} occurred on server`
             : 'The page was not found!'}
         </h2>
-        <p><Link to='/'>Go back to the homepage</Link></p>
+        <p><Link to='/'><a>Go back to the homepage</a></Link></p>
 
         <style jsx>{`
           h2, p {

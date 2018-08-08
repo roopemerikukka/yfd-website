@@ -1,10 +1,19 @@
 import breakpoints from '../common/breakpoints'
+import { Router } from '../routes.js'
+import NProgress from 'nprogress'
+
+Router.onRouteChangeStart = (url) => {
+  console.log(`Loading: ${url}`)
+  NProgress.start()
+}
+Router.onRouteChangeComplete = () => NProgress.done()
+Router.onRouteChangeError = () => NProgress.done()
 
 export default ({ children }) => (
   <div className='wrapper'>
     {children}
     <style jsx>{`
-      div {
+      .wrapper {
         width: 85.2%;
         margin: 0 auto;
         min-height: 70vh;
@@ -13,7 +22,7 @@ export default ({ children }) => (
 
     <style jsx>{`
       @media screen and (min-width: ${breakpoints.medium}) {
-        div {
+        .wrapper {
           width: 66.16%;
         }
       }
@@ -21,7 +30,7 @@ export default ({ children }) => (
 
     <style jsx>{`
       @media screen and (min-width: ${breakpoints.large}) {
-        div {
+        .wrapper {
           width: 65.642%;
         }
       }
@@ -29,7 +38,7 @@ export default ({ children }) => (
 
     <style jsx>{`
       @media screen and (min-width: ${breakpoints.xlarge}) {
-        div {
+        .wrapper {
           width: 82.5%;
         }
       }
@@ -37,7 +46,7 @@ export default ({ children }) => (
 
     <style jsx>{`
       @media screen and (min-width: ${breakpoints.xxlarge}) {
-        div {
+        .wrapper {
           width: 100%;
           max-width: 99.375em; /* 1590px / 16 = 99.375 */
         }
