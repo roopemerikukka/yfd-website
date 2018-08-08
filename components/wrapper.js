@@ -1,13 +1,4 @@
 import breakpoints from '../common/breakpoints'
-import { Router } from '../routes.js'
-import NProgress from 'nprogress'
-
-Router.onRouteChangeStart = (url) => {
-  console.log(`Loading: ${url}`)
-  NProgress.start()
-}
-Router.onRouteChangeComplete = () => NProgress.done()
-Router.onRouteChangeError = () => NProgress.done()
 
 export default ({ children }) => (
   <div className='wrapper'>

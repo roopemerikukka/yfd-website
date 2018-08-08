@@ -1,9 +1,9 @@
 import breakpoints from '../common/breakpoints'
 import { textStyles } from '../common/textStyles'
-import { BLUE, WHITE } from '../common/colors';
+import { BLUE, WHITE } from '../common/colors'
 
-export default ({ children, link }) => (
-  <a className={textStyles.linkButton.className} href={link}>
+export default ({ children, link, onClick }) => (
+  <a className={textStyles.linkButton.className} href={link} onClick={onClick}>
     {children}
     <style jsx>{`
       a {

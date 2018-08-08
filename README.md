@@ -13,14 +13,19 @@ This is an ID that points to the space in Contentful the app connects to. This I
 ### CONTENTFUL_ACCESS_TOKEN
 This is an access token that has read rights to all space content in contentful. This can be created / aquired from the Contentful web interface under Settings -> API keys. Use the `Content Delivery API - access token` instead of the `Content Preview API - access token`.
 
+### GA_TRACKING_ID
+This is a tracking ID of the Google Analytics property to which you want to send data. If you don't set it the tracking won't be enabled.
+
 ### Environment variables and CircleCI
 The project is automatically deployed with CircleCI. The deployment is done automatically always when pull-requests are merged to development and master branches on GitHub. To be able to do this a few extra env variables need to be configured via the CircleCI web interface. These env variables are:
 - STAGING_CONTENTFUL_SPACE_ID
 - STAGING_CONTENTFUL_ACCESS_TOKEN
+- STAGING_GA_TRACKING_ID
 - PRODUCTION_CONTENTFUL_SPACE_ID
 - PRODUCTION_CONTENTFUL_ACCESS_TOKEN
+- PRODUCTION_GA_TRACKING_ID
 
-They set the env variable values for the different environments when CircleCI is automatically deploying the software. These are sotred securely inside CircleCI. Your local development environment doesn't need anything else than the env file to work.
+They set the env variable values for the different environments when CircleCI is automatically deploying the software. These are stored securely inside CircleCI. Your local development environment doesn't need anything else than the env file to work. Like mentioned above leaving out the GA_TRACKING_ID env variable disables analytics.
 
 ## File naming convention
 The whole project follows the `lowerCamelCase` naming convention with all files.

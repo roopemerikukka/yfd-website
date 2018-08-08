@@ -8,6 +8,23 @@ import Wrapper from '../components/wrapper'
 import Logo from '../components/logo'
 import Footer from '../components/siteFooter'
 import Navigation from '../components/navigation'
+import Router from 'next/router'
+import { triggerPageview } from '../common/gtag'
+import NProgress from 'nprogress'
+
+Router.onRouteChangeStart = () => {
+  NProgress.start()
+}
+
+Router.onRouteChangeComplete = ( url ) => {
+  NProgress.done()
+  // Log a page view to analytics on every route change.
+  triggerPageview( url )
+}
+
+Router.onRouteChangeError = () => NProgress.done()
+
+
 
 const globalTextStyles = getTextStylesCss()
 
@@ -18,7 +35,7 @@ export default class MyApp extends App {
 
     // Call getInitalProps of pages and pass the contentful client instance.
     let pageProps = {}
-    if (Component.getInitialProps) {
+    if ( Component.getInitialProps ) {
       pageProps = await Component.getInitialProps({ ctx, contentfulClient })
     }
 

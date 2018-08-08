@@ -1,10 +1,8 @@
 import LinkButton from '../components/linkButton'
-import { remCalc } from '../common/helperFunctions'
-import breakpoints from '../common/breakpoints'
 
-export default ({ label, url }) => (
+export default ({ label, url, onClick }) => (
   <div className='product-action'>
-    <LinkButton link={url}>{label}</LinkButton>
+    <LinkButton link={url} onClick={onClick}>{label}</LinkButton>
 
     <style jsx>{`
       .product-action {

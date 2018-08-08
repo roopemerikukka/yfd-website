@@ -1,23 +1,32 @@
 import React from 'react'
 import { BLUE } from '../common/colors'
 import breakpoints from '../common/breakpoints'
+import { triggerEvent } from '../common/gtag'
 
 export default class extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor( props ) {
+    super( props )
     this.state = {
       activeImgIndex: 0
     }
   }
 
-  onThumbnailClick(i) {
+  onThumbnailClick( i ) {
     this.setState({
       activeImgIndex: i
+    })
+
+    const { images } = this.props
+    triggerEvent({
+      action: 'product_gallery',
+      category: images[i].fields.title,
+      label: images[i].fields.file.url,
+      value: 1
     })
   }
 
   render() {
-    const { images = [] } = this.props
+    const { images = []} = this.props
     let { activeImgIndex } = this.state
 
     return (
@@ -33,24 +42,24 @@ export default class extends React.Component {
               ${images[activeImgIndex].fields.file.url}?w=1603&h=1145&fit=fill 1603w,
               ${images[activeImgIndex].fields.file.url}?w=2002&h=1430&fit=fill 2002w
             `}
-            sizes="100vw"
+            sizes='100vw'
             src={`${images[activeImgIndex].fields.file.url}?w=1001&h=715&fit=fill`}
             alt={images[activeImgIndex].fields.title}
           />
         }
         <nav>
           <ol>
-            {images.map((image, index) => (
+            {images.map(( image, index ) => (
               <li key={index}>
-                <picture key={index} onClick={this.onThumbnailClick.bind(this, index)} className={index === activeImgIndex ? 'active' : ''}>
+                <picture key={index} onClick={this.onThumbnailClick.bind( this, index )} className={index === activeImgIndex ? 'active' : ''}>
                   <source
-                    media="(min-width: 768px)"
+                    media='(min-width: 768px)'
                     srcSet={`
                       ${image.fields.file.url}?w=301&h=215&fit=fill 301w,
                       ${image.fields.file.url}?w=602&h=430&fit=fill 602w,
                       ${image.fields.file.url}?w=1001&h=715&fit=fill 1001w
                     `}
-                    sizes="33vw"
+                    sizes='33vw'
                     alt={image.fields.title} />
                   <img src={`${image.fields.file.url}?w=156&h=156&fit=fill`} alt={image.fields.title} />
                 </picture>
