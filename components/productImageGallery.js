@@ -7,13 +7,15 @@ export default class extends React.Component {
   constructor( props ) {
     super( props )
     this.state = {
-      activeImgIndex: 0
+      activeImgIndex: 0,
+      loading: false
     }
   }
 
   onThumbnailClick( i ) {
     this.setState({
-      activeImgIndex: i
+      activeImgIndex: i,
+      loading: true
     })
 
     const { images } = this.props
@@ -25,15 +27,21 @@ export default class extends React.Component {
     })
   }
 
+  handleImageOnLoad() {
+    this.setState({
+      loading: false
+    })
+  }
+
   render() {
     const { images = []} = this.props
-    let { activeImgIndex } = this.state
+    let { activeImgIndex, loading } = this.state
 
     return (
       <div className='product-image-gallery'>
         {images[activeImgIndex] &&
           <img
-            className='product-image-gallery__stage'
+            className={`product-image-gallery__stage ${loading ? 'loading' : ''}`}
             itemProp='image'
             srcSet={`
               ${images[activeImgIndex].fields.file.url}?w=602&h=430&fit=fill 602w,
@@ -45,6 +53,7 @@ export default class extends React.Component {
             sizes='100vw'
             src={`${images[activeImgIndex].fields.file.url}?w=1001&h=715&fit=fill`}
             alt={images[activeImgIndex].fields.title}
+            onLoad={this.handleImageOnLoad.bind( this )}
           />
         }
         <nav>
@@ -86,6 +95,14 @@ export default class extends React.Component {
           img, picture {
             width: 100%;
             max-width: 100%;
+          }
+
+          img {
+            transition: all .2s;
+          }
+
+          .product-image-gallery__stage.loading {
+            filter: brightness(80%) grayscale(100%);
           }
 
           picture {
