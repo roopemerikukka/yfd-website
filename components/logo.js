@@ -109,7 +109,7 @@ class Logo extends Component {
             <style jsx>{`
               @media screen and (min-width: ${breakpoints.xlarge}) {
                 .logo {
-                  padding: 287px 0 146px 0;
+                  padding: 187px 0 100px 0;
                 }
                 .logo__mark {
                   width: 54px;
@@ -126,9 +126,20 @@ class Logo extends Component {
             `}</style>
 
             <style jsx>{`
+              @media screen and (min-width: 90em) {
+                .logo {
+                  padding: 240px 0 130px 0;
+                }
+                .logo__mark {}
+                .logo__text {}
+              }
+            `}</style>
+
+
+            <style jsx>{`
               @media screen and (min-width: ${breakpoints.xxlarge}) {
                 .logo {
-                  padding: 352px 0 296px 0;
+                  padding: 280px 0 200px 0;
                 }
                 .logo__mark {
                   width: 75px;
