@@ -17,11 +17,10 @@ export const textStyles = {
   h1: {
     htmlElement: '.wysiwyg h1',
     config: new Map([
-      [320, new Map([['font-size', 30]])],
-      [768, new Map([['font-size', 36]])],
-      [1024, new Map([['font-size', 40]])],
-      [1280, new Map([['font-size', 56]])],
-      [1920, new Map([['font-size', 68]])],
+      [320, new Map([['font-size', 22]])],
+      [768, new Map([['font-size', 24]])],
+      [1280, new Map([['font-size', 32]])],
+      [1920, new Map([['font-size', 46]])]
     ]),
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },
@@ -29,11 +28,11 @@ export const textStyles = {
   h2: {
     htmlElement: '.wysiwyg h2',
     config: new Map([
-      [320, new Map([['font-size', 30]])],
-      [768, new Map([['font-size', 32]])],
-      [1024, new Map([['font-size', 34]])],
-      [1280, new Map([['font-size', 48]])],
-      [1920, new Map([['font-size', 58]])],
+      [320, new Map([['font-size', 18]])],
+      [768, new Map([['font-size', 18]])],
+      [1024, new Map([['font-size', 18]])],
+      [1280, new Map([['font-size', 24]])],
+      [1920, new Map([['font-size', 30]])],
     ]),
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },
@@ -41,22 +40,23 @@ export const textStyles = {
   h3: {
     htmlElement: '.wysiwyg h3',
     config: new Map([
-      [320, new Map([['font-size', 26]])],
-      [768, new Map([['font-size', 28]])],
-      [1024, new Map([['font-size', 28]])],
-      [1280, new Map([['font-size', 42]])],
-      [1920, new Map([['font-size', 46]])],
+      [320, new Map([['font-size', 16]])],
+      [768, new Map([['font-size', 16]])],
+      [1024, new Map([['font-size', 16]])],
+      [1280, new Map([['font-size', 20]])],
+      [1920, new Map([['font-size', 24]])],
     ]),
-    static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
+    static: `font-weight: 600; font-style: italic; line-height: 110%; color: ${BLACK};`
   },
 
   h4: {
     htmlElement: '.wysiwyg h4',
     config: new Map([
-      [320, new Map([['font-size', 18]])],
-      [768, new Map([['font-size', 24]])],
-      [1024, new Map([['font-size', 26]])],
-      [1280, new Map([['font-size', 38]])]
+      [320, new Map([['font-size', 14]])],
+      [768, new Map([['font-size', 14]])],
+      [1024, new Map([['font-size', 14]])],
+      [1280, new Map([['font-size', 18]])],
+      [1920, new Map([['font-size', 22]])]
     ]),
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },
@@ -64,9 +64,11 @@ export const textStyles = {
   h5: {
     htmlElement: '.wysiwyg h5',
     config: new Map([
-      [320, new Map([['font-size', 16]])],
-      [768, new Map([['font-size', 20]])],
-      [1024, new Map([['font-size', 26]])]
+      [320, new Map([['font-size', 12]])],
+      [768, new Map([['font-size', 12]])],
+      [1024, new Map([['font-size', 12]])],
+      [1280, new Map([['font-size', 16]])],
+      [1920, new Map([['font-size', 20]])]
     ]),
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },
