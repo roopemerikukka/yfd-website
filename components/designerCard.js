@@ -20,10 +20,11 @@ export default ({ designer }) => (
         }
 
         .designer-card h3 {
-          margin: 0;
+          margin: 0 auto;
           color: black;
           transition: color 0.12s ease-in;
           text-transform: uppercase;
+          max-width: 320px;
         }
 
         .designer-card:hover {
@@ -54,6 +55,10 @@ export default ({ designer }) => (
 
       <style jsx>{`
         @media screen and (min-width: ${breakpoints.xlarge}) {
+          .designer-card h3 {
+            max-width: 400px;
+          }
+          
           .designer-card img {
             max-width: 180px;
             margin-bottom: ${remCalc(40)};
