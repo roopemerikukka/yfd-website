@@ -9,19 +9,13 @@ export default ({ name, price, slug, imageUrl }) => (
     <a className='product-card'>
       <img  className='product-card__img' 
             srcSet={`
-            ${imageUrl}?w=600&h=600 600w,
-            ${imageUrl}?w=1000&h=1000 1000w,
-            ${imageUrl}?w=1280&h=1280 1280w,
-            ${imageUrl}?w=1600&h=1600 1600w,
-            ${imageUrl} 2000w
+            ${imageUrl}?w=600&h=600&fit=fill 602w 602h,
+            ${imageUrl}?w=1000&h=1000&fit=fill 1002w 1002h,
+            ${imageUrl}?w=1000&h=1000&fit=fill 1282w 1282h,
+            ${imageUrl}?w=1200&h=1200&fit=fill 1602w 1602h
             `}
-            sizes=" 
-            (max-width: 320px) 280px,
-            (max-width: 768px) 768px,
-            (max-width: 1024px) 1024px,
-            (max-width: 1280px) 1280px,
-            2000px"
-            src={`${imageUrl}?w=1000&h=1000`} 
+            sizes='100vw'
+            src={`${imageUrl}?w=1000&h=1000&fit=fill`} 
             alt={name}
             />
       <div className='product-card__overlay' />
