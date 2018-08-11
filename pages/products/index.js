@@ -49,7 +49,7 @@ export default class Products extends React.Component {
         <style jsx>{`
           .products {
             width: 95%;
-            margin: 0 auto;
+            margin: 0 auto 4rem auto;
           }
 
           ul {
@@ -67,6 +67,7 @@ export default class Products extends React.Component {
           @media screen and (min-width: ${breakpoints.medium}) {
             .products {
               width: 100%;
+              margin-bottom: 6rem;
             }
 
             ul {
@@ -83,9 +84,12 @@ export default class Products extends React.Component {
 
         <style jsx>{`
           @media screen and (min-width: ${breakpoints.large}) {
+            .products {
+              margin-bottom: 12rem;
+            }
             ul {
               width: 100%;
-              margin: 0 -2% 4rem;
+              margin: 0 -2%;
             }
 
             ul li {
@@ -115,6 +119,9 @@ export default class Products extends React.Component {
 
         <style jsx>{`
           @media screen and (min-width: ${breakpoints.xxlarge}) {
+            .products {
+              margin-bottom: 16rem;
+            }
             ul {
               margin: 0 -2.25%;
             }

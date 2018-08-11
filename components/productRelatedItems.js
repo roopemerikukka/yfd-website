@@ -58,7 +58,7 @@ export default class RelatedItems extends Component {
 
             .related-items__pu li {
               width: 33.333%;
-              padding: 0 2.954545%;
+              padding: 0 1.934524%;
             }
           }
         `}</style>

@@ -91,7 +91,9 @@ export default class Product extends React.Component {
         </div>
 
         <style jsx>{`
-          .product {}
+          .product {
+            margin-bottom: 2rem;
+          }
 
           .product__action,
           .product__name-price,
@@ -150,6 +152,10 @@ export default class Product extends React.Component {
 
         <style jsx>{`
           @media screen and (min-width: ${breakpoints.large}) {
+            .product {
+              margin-bottom: 4rem;
+            }
+
             .product__action,
             .product__name-price,
             .product__description {
@@ -169,6 +175,10 @@ export default class Product extends React.Component {
 
         <style jsx>{`
           @media screen and (min-width: ${breakpoints.xlarge}) {
+            .product {
+              margin-bottom: 6rem;
+            }
+
             .product__action {
               width: 39.867424%;
               margin-bottom: ${remCalc( 64 )};
@@ -205,6 +215,10 @@ export default class Product extends React.Component {
 
         <style jsx>{`
           @media screen and (min-width: ${breakpoints.xxlarge}) {
+            .product {
+              margin-bottom: 12rem;
+            }
+
             .product__action {
               margin-bottom: ${remCalc( 92 )};
             }
