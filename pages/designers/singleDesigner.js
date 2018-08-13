@@ -6,6 +6,7 @@ import { remCalc, stripMarkdown } from '../../common/helperFunctions'
 import breakpoints from '../../common/breakpoints'
 import RelatedProducts from '../../components/designerRelatedItems'
 import SocialMetaFields from '../../components/socialMetaFields'
+import { GRAY } from '../../common/colors'
 
 export default class Designer extends React.Component {
   static async getInitialProps({ ctx, contentfulClient }) {
@@ -40,9 +41,10 @@ export default class Designer extends React.Component {
             <h4 className={textStyles.designerTagline.className}>{designer.fields.tagline}</h4>
           </div>
           <div className='designer__profile-img'>
-            <img src={designer.fields.profileImage.fields.file.url} />
+            <div className='designer__profile-img-wrap'>
+              <img src={designer.fields.profileImage.fields.file.url} />
+            </div>
           </div>
-
           <div className='designer__people'>
             <h3 className={textStyles.designerWho.className}>Who?</h3>
             <PeoplePullUp people={designer.fields.people} />
@@ -72,11 +74,23 @@ export default class Designer extends React.Component {
           }
 
           .designer__profile-img {
+            width: 100%;
             margin-bottom: ${remCalc(32)};
           }
 
+          .designer__profile-img-wrap {
+            position: relative;
+            height: 0;
+            padding-bottom: ${500/7}%;
+            background-color: ${GRAY};
+          }
+
           .designer__profile-img img {
-            max-width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
           }
 
           .designer__people {

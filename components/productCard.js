@@ -1,23 +1,30 @@
 import { Link } from '../routes'
 import { textStyles } from '../common/textStyles'
-import { BLACK, BLUE, WHITE } from '../common/colors'
+import { BLACK, BLUE, WHITE, GRAY } from '../common/colors'
 import { remCalc } from '../common/helperFunctions'
 import breakpoints from '../common/breakpoints'
 
 export default ({ name, price, slug, imageUrl }) => (
   <Link scroll={false} route={`/products/${slug}`}>
     <a className='product-card'>
-      <img  className='product-card__img' 
-            srcSet={`
-            ${imageUrl}?w=600&h=600&fit=fill 602w 602h,
-            ${imageUrl}?w=1000&h=1000&fit=fill 1002w 1002h,
-            ${imageUrl}?w=1000&h=1000&fit=fill 1282w 1282h,
-            ${imageUrl}?w=1200&h=1200&fit=fill 1602w 1602h
-            `}
-            sizes='100vw'
-            src={`${imageUrl}?w=1000&h=1000&fit=fill`} 
-            alt={name}
-            />
+      <div className='product-card__img-wrap'>
+        <img
+          className='product-card__img' 
+          srcSet={`
+            ${imageUrl}?w=600&h=600&fit=fill 600w,
+            ${imageUrl}?w=1000&h=1000&fit=fill 1000w,
+            ${imageUrl}?w=1200&h=1200&fit=fill 1280w,
+            ${imageUrl}?w=1600&h=1600&fit=fill 1600w
+          `}
+          sizes={`
+            (max-width: ${breakpoints.small}) 100vw,
+            (max-width: ${breakpoints.medium}) 50vw,
+            33vw
+          `}
+          src={`${imageUrl}?w=300&h=300&fit=fill`} 
+          alt={name}
+        />
+      </div>
       <div className='product-card__overlay' />
       <div className='product-card__info'>
         <h2 className={textStyles.cardTitle.className}>{name}</h2>
@@ -30,9 +37,22 @@ export default ({ name, price, slug, imageUrl }) => (
           width: 100%;
         }
 
-        .product-card__img {
+        .product-card__img-wrap {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-bottom: 100%;
           max-width: 100%;
-          margin-bottom: ${remCalc(8)};
+          margin-bottom: ${remCalc( 8 )};
+          background-color: ${GRAY};
+        }
+
+        .product-card__img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
         }
         
         .product-card__info {
@@ -83,7 +103,7 @@ export default ({ name, price, slug, imageUrl }) => (
 
           .product-card__info h2 {
             width: 100%;
-            margin-bottom: ${remCalc(8)};
+            margin-bottom: ${remCalc( 8 )};
             color: ${WHITE};
           }
 

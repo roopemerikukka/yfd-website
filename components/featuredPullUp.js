@@ -55,7 +55,7 @@ export default ({ products }) => (
         }
 
         .featured-pu li {
-          width: 33.333%;
+          width: 50%;
           padding: 0 1.515151515%;
           margin-bottom: 40px;
         }
@@ -73,6 +73,7 @@ export default ({ products }) => (
         }
 
         .featured-pu li {
+          width: 33.3333%;
           padding: 1.761006289%;
         }
       }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BLUE } from '../common/colors'
+import { BLUE, GRAY } from '../common/colors'
 import breakpoints from '../common/breakpoints'
 import { triggerEvent } from '../common/gtag'
 
@@ -40,21 +40,23 @@ export default class extends React.Component {
     return (
       <div className='product-image-gallery'>
         {images[activeImgIndex] &&
-          <img
-            className={`product-image-gallery__stage ${loading ? 'loading' : ''}`}
-            itemProp='image'
-            srcSet={`
-              ${images[activeImgIndex].fields.file.url}?w=602&h=430&fit=fill 602w,
-              ${images[activeImgIndex].fields.file.url}?w=1001&h=715&fit=fill 1001w,
-              ${images[activeImgIndex].fields.file.url}?w=1281&h=915&fit=fill 1281w,
-              ${images[activeImgIndex].fields.file.url}?w=1603&h=1145&fit=fill 1603w,
-              ${images[activeImgIndex].fields.file.url}?w=2002&h=1430&fit=fill 2002w
-            `}
-            sizes='100vw'
-            src={`${images[activeImgIndex].fields.file.url}?w=1001&h=715&fit=fill`}
-            alt={images[activeImgIndex].fields.title}
-            onLoad={this.handleImageOnLoad.bind( this )}
-          />
+          <div className='product-image-gallery__stage-wrap'>
+            <img
+              className={`product-image-gallery__stage ${loading ? 'loading' : ''}`}
+              itemProp='image'
+              srcSet={`
+                ${images[activeImgIndex].fields.file.url}?w=602&h=430&fit=fill 602w,
+                ${images[activeImgIndex].fields.file.url}?w=1001&h=715&fit=fill 1001w,
+                ${images[activeImgIndex].fields.file.url}?w=1281&h=915&fit=fill 1281w,
+                ${images[activeImgIndex].fields.file.url}?w=1603&h=1145&fit=fill 1603w,
+                ${images[activeImgIndex].fields.file.url}?w=2002&h=1430&fit=fill 2002w
+              `}
+              sizes='100vw'
+              src={`${images[activeImgIndex].fields.file.url}?w=1001&h=715&fit=fill`}
+              alt={images[activeImgIndex].fields.title}
+              onLoad={this.handleImageOnLoad.bind( this )}
+            />
+          </div>
         }
         <nav>
           <ol>
@@ -99,6 +101,21 @@ export default class extends React.Component {
 
           img {
             transition: all .2s;
+          }
+
+          .product-image-gallery__stage-wrap {
+            position: relative;
+            height: 0;
+            padding-bottom: ${500/7}%;
+            background-color: ${GRAY};
+          }
+
+          .product-image-gallery__stage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
           }
 
           .product-image-gallery__stage.loading {

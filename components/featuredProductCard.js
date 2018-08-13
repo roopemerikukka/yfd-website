@@ -1,7 +1,7 @@
-import {Link} from '../routes'
+import { Link } from '../routes'
 import breakpoints from '../common/breakpoints'
 import { textStyles } from '../common/textStyles'
-import { BLACK, BLUE } from '../common/colors'
+import { BLACK, BLUE, GRAY } from '../common/colors'
 
 export default ({ product }) => (
   <Link scroll={false} route={`/products/${product.fields.slug}`}>
@@ -10,22 +10,19 @@ export default ({ product }) => (
         <h2 className={textStyles.cardTitle.className}>{product.fields.name}</h2>
         <h3 className={textStyles.cardPrice.className}>{product.fields.price}€</h3>
       </div>
-      <img  className='featured-product-card__img' 
-            srcSet={`
-            ${product.fields.images[0].fields.file.url}?w=600&h=600 600w,
-            ${product.fields.images[0].fields.file.url}?w=1000&h=688 1000w,
-            ${product.fields.images[0].fields.file.url}?w=1280&h=880 1280w,
-            ${product.fields.images[0].fields.file.url}?w=1600&h=1100 1600w,
-            ${product.fields.images[0].fields.file.url} 2000w,
-            `}
-            sizes=" 
-            (max-width: 320px) 280px,
-            (max-width: 768px) 768px,
-            (max-width: 1024px) 1024px,
-            (max-width: 1280px) 1280px,
-            2000px"
-            src={`${product.fields.images[0].fields.file.url}?w=1000&h=1000`} alt={product.fields.images[0].fields.title}
-            />
+      <div className='featured-product-card__img-warp'>
+        <img className='featured-product-card__img' 
+          srcSet={`
+            ${product.fields.images[0].fields.file.url}?w=600&h=600&fit=fill 600w,
+            ${product.fields.images[0].fields.file.url}?w=1200&h=1200&fit=fill 1200w
+          `}
+          sizes={`
+            (max-width: ${breakpoints.small}) 100vw,
+            50vw
+          `}
+          src={`${product.fields.images[0].fields.file.url}?w=300&h=300&fit=fill`} alt={product.fields.images[0].fields.title}
+        />
+      </div>
       <style jsx>{`
         .featured-product-card {
           display: block;
@@ -67,8 +64,20 @@ export default ({ product }) => (
           text-decoration: none;
         }
         
+        .featured-product-card__img-warp {
+          width: 100%;
+          height: 0;
+          padding-bottom: 100%;
+          position: relative;
+          background-color: ${GRAY};
+        }
+
         .featured-product-card__img {
-          max-width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
         }
       `}</style>
 
