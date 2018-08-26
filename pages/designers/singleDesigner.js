@@ -200,6 +200,7 @@ export default class Designer extends React.Component {
             }
 
             .designer__profile-img {
+              width: 80%;
               margin-bottom: ${remCalc(134)};
             }
 
