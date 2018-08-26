@@ -34,6 +34,10 @@ class Logo extends Component {
               .logo.is-visible {
                 opacity: 1;
               }
+
+              .logo a {
+                display: inline-block;
+              }
               
               .logo__mark {
                 display: block;
@@ -99,8 +103,13 @@ class Logo extends Component {
             <style jsx>{`
               @media screen and (min-width: ${breakpoints.large}) {
                 .logo {
-                  padding: 118px 0 95px 0;
+                  padding: 160px 0 60px 0;
                 }
+
+                .logo.is-page {
+                  padding-bottom: 0;
+                }
+
                 .logo__mark {}
                 .logo__text {}
               }
@@ -109,16 +118,19 @@ class Logo extends Component {
             <style jsx>{`
               @media screen and (min-width: ${breakpoints.xlarge}) {
                 .logo {
-                  padding: 187px 0 100px 0;
+                  padding: 200px 0 100px 0;
                 }
+
                 .logo__mark {
                   width: 54px;
                   height: 75px;
                 }
+
                 .logo__text {
                   width: 394px;
                   height: 37px;
                 }
+
                 .logo__tagline {
                   font-size: 18px;
                 }
@@ -130,6 +142,7 @@ class Logo extends Component {
                 .logo {
                   padding: 240px 0 130px 0;
                 }
+
                 .logo__mark {}
                 .logo__text {}
               }
@@ -141,14 +154,21 @@ class Logo extends Component {
                 .logo {
                   padding: 280px 0 200px 0;
                 }
+
+                .logo.is-page {
+                  padding-bottom: 140px;
+                }
+
                 .logo__mark {
                   width: 75px;
                   height: 103px;
                 }
+
                 .logo__text {
                   width: 403px;
                   height: 38px;
                 }
+
                 .logo__tagline {
                   font-size: 22px;
                 }
