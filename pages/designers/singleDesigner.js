@@ -56,10 +56,12 @@ export default class Designer extends React.Component {
             <Wysiwyg content={designer.fields.description} />
           </div>
 
-          <div className='designer__products'>
-            <h4 className={textStyles.designerRelated.className}>Products from {designer.fields.name}</h4>
-            <RelatedProducts products={products} />
-          </div>
+          {products.length > 0 &&
+            <div className='designer__products'>
+              <h4 className={textStyles.designerRelated.className}>Products from {designer.fields.name}</h4>
+              <RelatedProducts products={products} />
+            </div>
+          }
         </div>
 
         <style jsx>{`
@@ -81,7 +83,7 @@ export default class Designer extends React.Component {
           .designer__profile-img-wrap {
             position: relative;
             height: 0;
-            padding-bottom: ${500/7}%;
+            padding-bottom: ${500 / 7}%;
             background-color: ${GRAY};
           }
 
