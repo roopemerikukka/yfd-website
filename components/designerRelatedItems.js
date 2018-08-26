@@ -1,10 +1,17 @@
-import ProductPreviewCard from '../components/productPreviewCard'
+import ProductCard from '../components/productCard'
 import breakpoints from '../common/breakpoints'
 
 export default ({ products }) => (
   <ul className='related-pu'>
-    {products.map((product, index) => (
-      <li key={index}><ProductPreviewCard product={product} /></li>
+    {products.map(( product, index ) => (
+      <li key={index}>
+        <ProductCard
+          name={product.fields.name}
+          slug={product.fields.slug}
+          price={product.fields.price}
+          imageUrl={product.fields.images[0].fields.file.url}
+        />
+      </li>
     ))}
 
     <style jsx>{`

@@ -189,6 +189,7 @@ export default class Designer extends React.Component {
 
             .designer__products {
               order: 6;
+              width: 100%;
             }
           }
         `}</style>
@@ -214,6 +215,10 @@ export default class Designer extends React.Component {
 
             .designer__people {
               width: 31.345%;
+            }
+
+            .designer__products {
+              width: 80%;
             }
           }
         `}</style>
