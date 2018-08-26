@@ -4,7 +4,7 @@ import { remCalc, stripMarkdown, shuffleArray } from '../../common/helperFunctio
 import { textStyles } from '../../common/textStyles'
 import { triggerEvent } from '../../common/gtag'
 
-import ProductStatus from '../../components/productStatus'
+// import ProductStatus from '../../components/productStatus'
 import ProductImageGallery from '../../components/productImageGallery'
 import ProductAction from '../../components/productAction'
 import ProductNamePrice from '../../components/productNamePrice'
@@ -58,7 +58,7 @@ export default class Product extends React.Component {
         <div className='product' itemScope itemType='http://schema.org/Product'>
           <div className='product__main'>
 
-            <ProductStatus status={product.fields.status} endDate={product.fields.nextDeadline} />
+            {/* <ProductStatus status={product.fields.status} endDate={product.fields.nextDeadline} /> */}
 
             <ProductImageGallery images={product.fields.images} />
 

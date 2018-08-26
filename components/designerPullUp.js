@@ -1,13 +1,12 @@
 import { Link } from '../routes'
-import { remCalc } from '../common/helperFunctions'
 import { textStyles } from '../common/textStyles'
 import breakpoints from '../common/breakpoints'
-import { BLACK } from '../common/colors';
+import { BLACK } from '../common/colors'
 
 export default ({ designers }) => (
   <ul className='designer-pu'>
     {designers.map((designer, index) => (
-      <li className={textStyles.peoplePuCopy} key={index}>
+      <li className={textStyles.peoplePuCopy.className} key={index}>
         <Link scroll={false} to={`/designers/${designer.fields.slug}`}>
           <a>
             <img
