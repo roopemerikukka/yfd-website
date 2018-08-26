@@ -17,10 +17,10 @@ export const textStyles = {
   h1: {
     htmlElement: '.wysiwyg h1',
     config: new Map([
-      [320, new Map([['font-size', 22]])],
-      [768, new Map([['font-size', 24]])],
-      [1280, new Map([['font-size', 32]])],
-      [1920, new Map([['font-size', 46]])]
+      [ 320, new Map([[ 'font-size', 22 ]]) ],
+      [ 768, new Map([[ 'font-size', 24 ]]) ],
+      [ 1280, new Map([[ 'font-size', 32 ]]) ],
+      [ 1920, new Map([[ 'font-size', 46 ]]) ]
     ]),
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },
@@ -28,11 +28,11 @@ export const textStyles = {
   h2: {
     htmlElement: '.wysiwyg h2',
     config: new Map([
-      [320, new Map([['font-size', 18]])],
-      [768, new Map([['font-size', 18]])],
-      [1024, new Map([['font-size', 18]])],
-      [1280, new Map([['font-size', 24]])],
-      [1920, new Map([['font-size', 30]])],
+      [ 320, new Map([[ 'font-size', 18 ]]) ],
+      [ 768, new Map([[ 'font-size', 18 ]]) ],
+      [ 1024, new Map([[ 'font-size', 18 ]]) ],
+      [ 1280, new Map([[ 'font-size', 24 ]]) ],
+      [ 1920, new Map([[ 'font-size', 30 ]]) ],
     ]),
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },
@@ -40,11 +40,11 @@ export const textStyles = {
   h3: {
     htmlElement: '.wysiwyg h3',
     config: new Map([
-      [320, new Map([['font-size', 16]])],
-      [768, new Map([['font-size', 16]])],
-      [1024, new Map([['font-size', 16]])],
-      [1280, new Map([['font-size', 20]])],
-      [1920, new Map([['font-size', 24]])],
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 768, new Map([[ 'font-size', 16 ]]) ],
+      [ 1024, new Map([[ 'font-size', 16 ]]) ],
+      [ 1280, new Map([[ 'font-size', 20 ]]) ],
+      [ 1920, new Map([[ 'font-size', 24 ]]) ],
     ]),
     static: `font-weight: 600; font-style: italic; line-height: 110%; color: ${BLACK};`
   },
@@ -52,11 +52,11 @@ export const textStyles = {
   h4: {
     htmlElement: '.wysiwyg h4',
     config: new Map([
-      [320, new Map([['font-size', 14]])],
-      [768, new Map([['font-size', 14]])],
-      [1024, new Map([['font-size', 14]])],
-      [1280, new Map([['font-size', 18]])],
-      [1920, new Map([['font-size', 22]])]
+      [ 320, new Map([[ 'font-size', 14 ]]) ],
+      [ 768, new Map([[ 'font-size', 14 ]]) ],
+      [ 1024, new Map([[ 'font-size', 14 ]]) ],
+      [ 1280, new Map([[ 'font-size', 18 ]]) ],
+      [ 1920, new Map([[ 'font-size', 22 ]]) ]
     ]),
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },
@@ -64,11 +64,11 @@ export const textStyles = {
   h5: {
     htmlElement: '.wysiwyg h5',
     config: new Map([
-      [320, new Map([['font-size', 12]])],
-      [768, new Map([['font-size', 12]])],
-      [1024, new Map([['font-size', 12]])],
-      [1280, new Map([['font-size', 16]])],
-      [1920, new Map([['font-size', 20]])]
+      [ 320, new Map([[ 'font-size', 12 ]]) ],
+      [ 768, new Map([[ 'font-size', 12 ]]) ],
+      [ 1024, new Map([[ 'font-size', 12 ]]) ],
+      [ 1280, new Map([[ 'font-size', 16 ]]) ],
+      [ 1920, new Map([[ 'font-size', 20 ]]) ]
     ]),
     static: `font-weight: bold; line-height: 110%; color: ${BLACK};`
   },
@@ -76,8 +76,8 @@ export const textStyles = {
   copy: {
     className: 'txt-style--copy',
     config: new Map([
-      [320, new Map([['font-size', 16]])],
-      [1920, new Map([['font-size', 22]])],
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 1920, new Map([[ 'font-size', 22 ]]) ],
     ]),
     static: `line-height: 130%; color: ${BLACK};`
   },
@@ -85,11 +85,11 @@ export const textStyles = {
   linkButton: {
     className: 'txt-style--link-btn',
     config: new Map([
-      [320, new Map([['font-size', 18]])],
-      [768, new Map([['font-size', 20]])],
-      [1024, new Map([['font-size', 20]])],
-      [1280, new Map([['font-size', 24]])],
-      [1920, new Map([['font-size', 36]])],
+      [ 320, new Map([[ 'font-size', 18 ]]) ],
+      [ 768, new Map([[ 'font-size', 20 ]]) ],
+      [ 1024, new Map([[ 'font-size', 20 ]]) ],
+      [ 1280, new Map([[ 'font-size', 24 ]]) ],
+      [ 1920, new Map([[ 'font-size', 36 ]]) ],
     ]),
     static: `font-weight: bold; line-height: 80%; color: ${WHITE}; background-color: ${GREEN}; text-transform: uppercase;`
   },
@@ -97,8 +97,8 @@ export const textStyles = {
   contactCopy: {
     className: 'txt-style--contact',
     config: new Map([
-      [320, new Map([['font-size', 13]])],
-      [1920, new Map([['font-size', 14]])],
+      [ 320, new Map([[ 'font-size', 13 ]]) ],
+      [ 1920, new Map([[ 'font-size', 14 ]]) ],
     ]),
     static: `line-height: 1.4; color: ${BLACK};`
   },
@@ -106,8 +106,8 @@ export const textStyles = {
   contactCopySmall: {
     className: 'txt-style--contact-small',
     config: new Map([
-      [320, new Map([['font-size', 10]])],
-      [1920, new Map([['font-size', 11]])],
+      [ 320, new Map([[ 'font-size', 10 ]]) ],
+      [ 1920, new Map([[ 'font-size', 11 ]]) ],
     ]),
     static: `line-height: 1.4; color: ${BLACK};`
   },
@@ -115,8 +115,8 @@ export const textStyles = {
   contactTitle: {
     className: 'txt-style--contact-title',
     config: new Map([
-      [320, new Map([['font-size', 13]])],
-      [1920, new Map([['font-size', 14]])],
+      [ 320, new Map([[ 'font-size', 13 ]]) ],
+      [ 1920, new Map([[ 'font-size', 14 ]]) ],
     ]),
     static: `line-height: 1; color: ${BLACK}; font-weight: bold; text-transform: uppercase;`
   },
@@ -124,10 +124,10 @@ export const textStyles = {
   pageHeading: {
     className: 'txt-style--page-heading',
     config: new Map([
-      [320, new Map([['font-size', 22]])],
-      [768, new Map([['font-size', 24]])],
-      [1280, new Map([['font-size', 32]])],
-      [1920, new Map([['font-size', 46]])]
+      [ 320, new Map([[ 'font-size', 22 ]]) ],
+      [ 768, new Map([[ 'font-size', 24 ]]) ],
+      [ 1280, new Map([[ 'font-size', 32 ]]) ],
+      [ 1920, new Map([[ 'font-size', 46 ]]) ]
     ]),
     static: `line-height: 1; color: ${BLACK}; font-weight: bold; text-transform: uppercase; text-align: center;`
   },
@@ -135,149 +135,169 @@ export const textStyles = {
   cardTitle: {
     className: 'txt-style--card-title',
     config: new Map([
-      [320, new Map([['font-size', 16]])],
-      [768, new Map([['font-size', 12]])],
-      [1024, new Map([['font-size', 12]])],
-      [1280, new Map([['font-size', 20]])],
-      [1920, new Map([['font-size', 22]])]
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 768, new Map([[ 'font-size', 12 ]]) ],
+      [ 1024, new Map([[ 'font-size', 12 ]]) ],
+      [ 1280, new Map([[ 'font-size', 20 ]]) ],
+      [ 1920, new Map([[ 'font-size', 22 ]]) ]
     ]),
-    static: `line-height: 1; font-weight: 700; text-transform: uppercase; text-decoration: none;`
+    static: 'line-height: 1; font-weight: 700; text-transform: uppercase; text-decoration: none;'
   },
 
   cardPrice: {
     className: 'txt-style--card-price',
     config: new Map([
-      [320, new Map([['font-size', 16]])],
-      [1280, new Map([['font-size', 20]])],
-      [1920, new Map([['font-size', 30]])]
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 1280, new Map([[ 'font-size', 20 ]]) ],
+      [ 1920, new Map([[ 'font-size', 30 ]]) ]
     ]),
-    static: `line-height: 1; font-weight: 600; text-decoration: none;`
+    static: 'line-height: 1; font-weight: 600; text-decoration: none;'
   },
 
   smallSectionTitle: {
     className: 'txt-style--small-section-title',
     config: new Map([
-      [320, new Map([['font-size', 16]])],
-      [768, new Map([['font-size', 18]])],
-      [1280, new Map([['font-size', 22]])],
-      [1920, new Map([['font-size', 24]])]
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 768, new Map([[ 'font-size', 18 ]]) ],
+      [ 1280, new Map([[ 'font-size', 22 ]]) ],
+      [ 1920, new Map([[ 'font-size', 24 ]]) ]
     ]),
-    static: `line-height: 1.1; font-weight: 700; text-transform: uppercase;`
+    static: 'line-height: 1.1; font-weight: 700; text-transform: uppercase;'
   },
 
   productName: {
     className: 'txt-style--product-title',
     config: new Map([
-      [320, new Map([['font-size', 22]])],
-      [768, new Map([['font-size', 24]])],
-      [1280, new Map([['font-size', 32]])],
-      [1920, new Map([['font-size', 46]])]
+      [ 320, new Map([[ 'font-size', 22 ]]) ],
+      [ 768, new Map([[ 'font-size', 24 ]]) ],
+      [ 1280, new Map([[ 'font-size', 32 ]]) ],
+      [ 1920, new Map([[ 'font-size', 46 ]]) ]
     ]),
-    static: `line-height: 1; font-weight: 700;`
+    static: 'line-height: 1; font-weight: 700;'
   },
 
   productPrice: {
     className: 'txt-style--product-price',
     config: new Map([
-      [320, new Map([['font-size', 20]])],
-      [768, new Map([['font-size', 22]])],
-      [1280, new Map([['font-size', 30]])],
-      [1920, new Map([['font-size', 42]])]
+      [ 320, new Map([[ 'font-size', 20 ]]) ],
+      [ 768, new Map([[ 'font-size', 22 ]]) ],
+      [ 1280, new Map([[ 'font-size', 30 ]]) ],
+      [ 1920, new Map([[ 'font-size', 42 ]]) ]
     ]),
-    static: `line-height: 0.8; font-weight: 600;`
+    static: 'line-height: 0.8; font-weight: 600;'
   },
 
   productStatus: {
     className: 'txt-style--product-status',
     config: new Map([
-      [320, new Map([['font-size', 16]])],
-      [768, new Map([['font-size', 18]])],
-      [1280, new Map([['font-size', 24]])],
-      [1920, new Map([['font-size', 44]])]
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 768, new Map([[ 'font-size', 18 ]]) ],
+      [ 1280, new Map([[ 'font-size', 24 ]]) ],
+      [ 1920, new Map([[ 'font-size', 44 ]]) ]
     ]),
-    static: `line-height: 1; font-weight: 600;`
+    static: 'line-height: 1; font-weight: 600;'
   },
 
   designerCardTitle: {
     className: 'txt-style--designer-card-title',
     config: new Map([
-      [320, new Map([['font-size', 16]])],
-      [1280, new Map([['font-size', 20]])],
-      [1920, new Map([['font-size', 26]])]
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 1280, new Map([[ 'font-size', 20 ]]) ],
+      [ 1920, new Map([[ 'font-size', 26 ]]) ]
     ]),
-    static: `line-height: 0.8; font-weight: 700; text-align: center;`
+    static: 'line-height: 0.8; font-weight: 700; text-align: center;'
   },
 
   designerCardTagline: {
     className: 'txt-style--designer-card-tagline',
     config: new Map([
-      [320, new Map([['font-size', 12]])],
-      [1280, new Map([['font-size', 14]])],
-      [1920, new Map([['font-size', 18]])]
+      [ 320, new Map([[ 'font-size', 12 ]]) ],
+      [ 1280, new Map([[ 'font-size', 14 ]]) ],
+      [ 1920, new Map([[ 'font-size', 18 ]]) ]
     ]),
-    static: `line-height: 1.1; font-weight: 400; text-align: center;`
+    static: 'line-height: 1.1; font-weight: 400; text-align: center;'
   },
 
   designerTagline: {
     className: 'txt-style--designer-tagline',
     config: new Map([
-      [320, new Map([['font-size', 14]])],
-      [1280, new Map([['font-size', 16]])],
-      [1920, new Map([['font-size', 22]])]
+      [ 320, new Map([[ 'font-size', 14 ]]) ],
+      [ 1280, new Map([[ 'font-size', 16 ]]) ],
+      [ 1920, new Map([[ 'font-size', 22 ]]) ]
     ]),
-    static: `line-height: 0.8; font-weight: 400; text-transform: uppercase;`
+    static: 'line-height: 0.8; font-weight: 400; text-transform: uppercase;'
   },
 
   designerWho: {
     className: 'txt-style--designer-who',
     config: new Map([
-      [320, new Map([['font-size', 14]])],
-      [1280, new Map([['font-size', 16]])],
-      [1920, new Map([['font-size', 22]])]
+      [ 320, new Map([[ 'font-size', 14 ]]) ],
+      [ 1280, new Map([[ 'font-size', 16 ]]) ],
+      [ 1920, new Map([[ 'font-size', 22 ]]) ]
     ]),
-    static: `line-height: 1.1; font-weight: 700; text-transform: uppercase;`
+    static: 'line-height: 1.1; font-weight: 700; text-transform: uppercase;'
   },
 
   designerQuote: {
     className: 'txt-style--designer-quote',
     config: new Map([
-      [320, new Map([['font-size', 16]])],
-      [768, new Map([['font-size', 18]])],
-      [1024, new Map([['font-size', 20]])],
-      [1280, new Map([['font-size', 32]])],
-      [1920, new Map([['font-size', 34]])]
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 768, new Map([[ 'font-size', 18 ]]) ],
+      [ 1024, new Map([[ 'font-size', 20 ]]) ],
+      [ 1280, new Map([[ 'font-size', 32 ]]) ],
+      [ 1920, new Map([[ 'font-size', 34 ]]) ]
     ]),
-    static: `line-height: 1.1; font-weight: 600; font-style: italic;`
+    static: 'line-height: 1.1; font-weight: 600; font-style: italic;'
   },
 
   designerRelated: {
     className: 'txt-style--designer-related',
     config: new Map([
-      [320, new Map([['font-size', 16]])],
-      [768, new Map([['font-size', 20]])],
-      [1920, new Map([['font-size', 28]])]
+      [ 320, new Map([[ 'font-size', 16 ]]) ],
+      [ 768, new Map([[ 'font-size', 20 ]]) ],
+      [ 1920, new Map([[ 'font-size', 28 ]]) ]
     ]),
-    static: `line-height: 0.8; font-weight: 600;`
+    static: 'line-height: 0.8; font-weight: 600;'
   },
 
   peoplePuCopy: {
     className: 'txt-style--people-pu-copy',
     config: new Map([
-      [320, new Map([['font-size', 14]])],
-      [1280, new Map([['font-size', 16]])],
-      [1920, new Map([['font-size', 22]])]
+      [ 320, new Map([[ 'font-size', 14 ]]) ],
+      [ 1280, new Map([[ 'font-size', 16 ]]) ],
+      [ 1920, new Map([[ 'font-size', 22 ]]) ]
     ]),
-    static: `line-height: 0.8; font-weight: 400;`
+    static: 'line-height: 0.8; font-weight: 400;'
   },
 
   navLinks: {
     className: 'txt-style--nav-links',
     config: new Map([
-      [320, new Map([['font-size', 14]])],
-      [1280, new Map([['font-size', 14]])],
-      [1920, new Map([['font-size', 18]])]
+      [ 320, new Map([[ 'font-size', 14 ]]) ],
+      [ 1280, new Map([[ 'font-size', 14 ]]) ],
+      [ 1920, new Map([[ 'font-size', 18 ]]) ]
     ]),
-    static: `line-height: 0.8; font-weight: 700; text-transform: uppercase;`
+    static: 'line-height: 0.8; font-weight: 700; text-transform: uppercase;'
+  },
+
+  designerPreviewName: {
+    className: 'txt-style--designer-preview-name',
+    config: new Map([
+      [ 1024, new Map([[ 'font-size', 16 ]]) ],
+      [ 1280, new Map([[ 'font-size', 18 ]]) ],
+      [ 1920, new Map([[ 'font-size', 24 ]]) ]
+    ]),
+    static: 'font-weight: bold; line-height: 0.8; text-align: center;'
+  },
+
+  designerPreviewSlogan: {
+    className: 'txt-style--designer-preview-slogan',
+    config: new Map([
+      [ 1024, new Map([[ 'font-size', 14 ]]) ],
+      [ 1280, new Map([[ 'font-size', 16 ]]) ],
+      [ 1920, new Map([[ 'font-size', 22 ]]) ]
+    ]),
+    static: 'font-weight: normal; line-height: 1; text-align: center; text-transform: uppercase;'
   }
 
 }
@@ -288,10 +308,10 @@ export const textStyles = {
  */
 export const getTextStylesCss = () => {
   let css = ''
-  for (let style in textStyles) {
-    css += polyfluidSizing(textStyles[style])
+  for ( let style in textStyles ) {
+    css += polyfluidSizing( textStyles[style])
   }
 
   // Return a minified css string.
-  return css.replace(/\s\s+/g, ' ')
+  return css.replace( /\s\s+/g, ' ' )
 }

@@ -5,8 +5,8 @@ import { BLACK } from '../common/colors'
 
 export default ({ designers }) => (
   <ul className='designer-pu'>
-    {designers.map((designer, index) => (
-      <li className={textStyles.peoplePuCopy.className} key={index}>
+    {designers.map(( designer, index ) => (
+      <li key={index}>
         <Link scroll={false} to={`/designers/${designer.fields.slug}`}>
           <a>
             <img
@@ -25,8 +25,8 @@ export default ({ designers }) => (
               alt={designer.fields.profileImage.fields.title}
             />
             <div className='text-wrap'>
-              <strong>{designer.fields.name}</strong>
-              {designer.fields.tagline}
+              <strong className={textStyles.designerPreviewName.className}>{designer.fields.name}</strong>
+              <div className={textStyles.designerPreviewSlogan.className}>{designer.fields.tagline}</div>
             </div>
           </a>
         </Link>
@@ -40,10 +40,6 @@ export default ({ designers }) => (
         margin: 4rem 0 8rem 0;
       }
 
-      li {
-        text-align: center;
-      }
-
       li:not(:last-child) {
         margin-bottom: 2rem;
       }
@@ -51,15 +47,15 @@ export default ({ designers }) => (
       a {
         text-decoration: none;
         color: ${BLACK};
-        font-weight: 300;
-        text-transform: uppercase;
+      }
+
+      a:hover {
+        text-decoration: none;
       }
 
       a strong {
         display: block;
-        text-transform: none;
-        font-weight: 600;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.6rem;
       }
       
       img {
