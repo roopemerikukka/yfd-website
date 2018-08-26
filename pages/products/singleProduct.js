@@ -14,8 +14,8 @@ import ProductRelatedItems from '../../components/productRelatedItems'
 import SocialMetaFields from '../../components/socialMetaFields'
 
 export default class Product extends React.Component {
-  static async getInitialProps({ ctx, contentfulClient }) {    
-    const slug = ctx.asPath.replace( /\/products\//gi, '' )
+  static async getInitialProps({ ctx, contentfulClient }) {
+    const slug = ctx.asPath.replace(/\/products\//gi, '')
     const product = await contentfulClient.getEntries({
       'content_type': 'product',
       'fields.slug[in]': slug
@@ -27,7 +27,7 @@ export default class Product extends React.Component {
     })
 
     // Suffle the related products to create dynamicity and get the first three
-    relatedProducts.items = shuffleArray( relatedProducts.items ).slice( 0, 3 )
+    relatedProducts.items = shuffleArray(relatedProducts.items).slice(0, 3)
 
     return { product: product.items[0], relatedProducts: relatedProducts.items, path: ctx.asPath }
   }
@@ -49,7 +49,7 @@ export default class Product extends React.Component {
       <React.Fragment>
         <SocialMetaFields
           title={product.fields.name}
-          description={`${stripMarkdown( product.fields.description ).slice( 0, 160 )}...`}
+          description={`${stripMarkdown(product.fields.description).slice(0, 160)}...`}
           siteSettings={siteSettings}
           imgSrc={product.fields.images[0].fields.file.url}
           ogType='product'
@@ -98,16 +98,16 @@ export default class Product extends React.Component {
           .product__action,
           .product__name-price,
           .product__description {
-            margin-bottom: ${remCalc( 32 )};
+            margin-bottom: ${remCalc(32)};
           }
 
           .product__information {
-            margin-bottom: ${remCalc( 48 )};
+            margin-bottom: ${remCalc(48)};
           }
 
           .product__designer {
             width: 80%;
-            margin-bottom: ${remCalc( 100 )};
+            margin-bottom: ${remCalc(100)};
           }
 
           .product__related {
@@ -115,7 +115,7 @@ export default class Product extends React.Component {
           }
 
           .product h2 {
-            margin: 0 0 ${remCalc( 6 )} 0;
+            margin: 0 0 ${remCalc(6)} 0;
           }
         `}</style>
 
@@ -134,7 +134,7 @@ export default class Product extends React.Component {
 
             .product__action {
               width: 58.333333%;
-              margin-bottom: ${remCalc( 38 )};
+              margin-bottom: ${remCalc(38)};
             }
 
             .product__name-price,
@@ -164,7 +164,7 @@ export default class Product extends React.Component {
             
             .product__information { 
               width: 52.083334%;
-              margin-bottom: ${remCalc( 135 )};
+              margin-bottom: ${remCalc(135)};
             }
             
             .product__designer { 
@@ -176,22 +176,23 @@ export default class Product extends React.Component {
         <style jsx>{`
           @media screen and (min-width: ${breakpoints.xlarge}) {
             .product {
-              margin-bottom: 6rem;
+              margin: 0 auto 6rem auto;
+              max-width: 89%;
             }
 
             .product__action {
               width: 39.867424%;
-              margin-bottom: ${remCalc( 64 )};
+              margin-bottom: ${remCalc(64)};
             }
 
             .product__name-price {
               width: 39.867424%;
-              margin-bottom: ${remCalc( 54 )};
+              margin-bottom: ${remCalc(54)};
             }
 
             .product__description {
               width: 57.102273%;
-              margin-bottom: ${remCalc( 54 )};
+              margin-bottom: ${remCalc(54)};
             }
 
             .product__information {
@@ -208,7 +209,7 @@ export default class Product extends React.Component {
             }
             
             .product h2 {
-              margin: 0 0 ${remCalc( 22 )} 0;
+              margin: 0 0 ${remCalc(22)} 0;
             }
           }
         `}</style>
@@ -220,16 +221,16 @@ export default class Product extends React.Component {
             }
 
             .product__action {
-              margin-bottom: ${remCalc( 92 )};
+              margin-bottom: ${remCalc(92)};
             }
 
             .product__name-price,
             .product__description {
-              margin-bottom: ${remCalc( 64 )};
+              margin-bottom: ${remCalc(64)};
             }
 
             .product__information {
-              margin-bottom: ${remCalc( 152 )};
+              margin-bottom: ${remCalc(152)};
             }
           }
         `}</style>
