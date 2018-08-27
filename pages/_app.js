@@ -14,6 +14,16 @@ import NProgress from 'nprogress'
 
 Router.onRouteChangeStart = () => {
   NProgress.start()
+
+  // On "mobile" ensure the page is scrolled to the top.
+  // Related to: https://github.com/roopemerikukka/yfd-website/issues/156
+  // Quite a monkey-patch tbh.
+  if ( window.innerWidth <= 1024 ) {
+    setTimeout(() => {
+      // Move page to top.
+      window.scrollTo( 0, 0 )
+    }, 860 )
+  }
 }
 
 Router.onRouteChangeComplete = ( url ) => {
