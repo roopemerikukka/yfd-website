@@ -14,14 +14,14 @@ export default ({ product }) => (
         <div className='featured-product-card__img-wrap'>
           <img className='featured-product-card__img'
             srcSet={`
-              ${product.fields.images[0].fields.file.url}?w=600&h=600&fit=fill 600w,
-              ${product.fields.images[0].fields.file.url}?w=1200&h=1200&fit=fill 1200w
+              ${product.fields.images[0].fields.file.url}?fm=jpg&fl=progressive&w=600&h=600&fit=fill 600w,
+              ${product.fields.images[0].fields.file.url}?fm=jpg&fl=progressive&w=1200&h=1200&fit=fill 1200w
             `}
             sizes={`
               (max-width: ${breakpoints.small}) 100vw,
               50vw
             `}
-            src={`${product.fields.images[0].fields.file.url}?w=300&h=300&fit=fill`} alt={product.fields.images[0].fields.title}
+            src={`${product.fields.images[0].fields.file.url}?fm=jpg&fl=progressive&w=300&h=300&fit=fill`} alt={product.fields.images[0].fields.title}
           />
         </div>
       </div>

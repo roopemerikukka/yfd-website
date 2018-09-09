@@ -11,17 +11,17 @@ export default ({ name, price, slug, imageUrl }) => (
         <img
           className='product-card__img' 
           srcSet={`
-            ${imageUrl}?w=600&h=600&fit=fill 600w,
-            ${imageUrl}?w=1000&h=1000&fit=fill 1000w,
-            ${imageUrl}?w=1200&h=1200&fit=fill 1280w,
-            ${imageUrl}?w=1600&h=1600&fit=fill 1600w
+            ${imageUrl}?fm=jpg&fl=progressive&w=600&h=600&fit=fill 600w,
+            ${imageUrl}?fm=jpg&fl=progressive&w=1000&h=1000&fit=fill 1000w,
+            ${imageUrl}?fm=jpg&fl=progressive&w=1200&h=1200&fit=fill 1280w,
+            ${imageUrl}?fm=jpg&fl=progressive&w=1600&h=1600&fit=fill 1600w
           `}
           sizes={`
             (max-width: ${breakpoints.small}) 100vw,
             (max-width: ${breakpoints.medium}) 50vw,
             33vw
           `}
-          src={`${imageUrl}?w=300&h=300&fit=fill`} 
+          src={`${imageUrl}?fm=jpg&fl=progressive&w=300&h=300&fit=fill`} 
           alt={name}
         />
       </div>

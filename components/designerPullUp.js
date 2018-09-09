@@ -12,16 +12,16 @@ export default ({ designers }) => (
             <img
               itemProp='image'
               srcSet={`
-                ${designer.fields.profileImage.fields.file.url}?w=180&h=180&fit=fill 180w,
-                ${designer.fields.profileImage.fields.file.url}?w=360&h=360&fit=fill 360w,
-                ${designer.fields.profileImage.fields.file.url}?w=540&h=540&fit=fill 540w,
-                ${designer.fields.profileImage.fields.file.url}?w=720&h=720&fit=fill 720w
+                ${designer.fields.profileImage.fields.file.url}?fm=jpg&fl=progressive&w=180&h=180&fit=fill 180w,
+                ${designer.fields.profileImage.fields.file.url}?fm=jpg&fl=progressive&w=360&h=360&fit=fill 360w,
+                ${designer.fields.profileImage.fields.file.url}?fm=jpg&fl=progressive&w=540&h=540&fit=fill 540w,
+                ${designer.fields.profileImage.fields.file.url}?fm=jpg&fl=progressive&w=720&h=720&fit=fill 720w
               `}
               sizes={`
                 (max-width: ${breakpoints.medium}) 50vw,
                 20vw
               `}
-              src={`${designer.fields.profileImage.fields.file.url}?w=180&h=180&fit=fill`}
+              src={`${designer.fields.profileImage.fields.file.url}?fm=jpg&fl=progressive&w=180&h=180&fit=fill`}
               alt={designer.fields.profileImage.fields.title}
             />
             <div className='text-wrap'>

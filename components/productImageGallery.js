@@ -45,14 +45,14 @@ export default class extends React.Component {
               className={`product-image-gallery__stage ${loading ? 'loading' : ''}`}
               itemProp='image'
               srcSet={`
-                ${images[activeImgIndex].fields.file.url}?w=602&h=430&fit=fill 602w,
-                ${images[activeImgIndex].fields.file.url}?w=1001&h=715&fit=fill 1001w,
-                ${images[activeImgIndex].fields.file.url}?w=1281&h=915&fit=fill 1281w,
-                ${images[activeImgIndex].fields.file.url}?w=1603&h=1145&fit=fill 1603w,
-                ${images[activeImgIndex].fields.file.url}?w=2002&h=1430&fit=fill 2002w
+                ${images[activeImgIndex].fields.file.url}?fm=jpg&fl=progressive&w=602&h=430&fit=fill 602w,
+                ${images[activeImgIndex].fields.file.url}?fm=jpg&fl=progressive&w=1001&h=715&fit=fill 1001w,
+                ${images[activeImgIndex].fields.file.url}?fm=jpg&fl=progressive&w=1281&h=915&fit=fill 1281w,
+                ${images[activeImgIndex].fields.file.url}?fm=jpg&fl=progressive&w=1603&h=1145&fit=fill 1603w,
+                ${images[activeImgIndex].fields.file.url}?fm=jpg&fl=progressive&w=2002&h=1430&fit=fill 2002w
               `}
               sizes='100vw'
-              src={`${images[activeImgIndex].fields.file.url}?w=1001&h=715&fit=fill`}
+              src={`${images[activeImgIndex].fields.file.url}?fm=jpg&fl=progressive&w=1001&h=715&fit=fill`}
               alt={images[activeImgIndex].fields.title}
               onLoad={this.handleImageOnLoad.bind( this )}
             />
@@ -66,13 +66,13 @@ export default class extends React.Component {
                   <source
                     media='(min-width: 768px)'
                     srcSet={`
-                      ${image.fields.file.url}?w=301&h=215&fit=fill 301w,
-                      ${image.fields.file.url}?w=602&h=430&fit=fill 602w,
-                      ${image.fields.file.url}?w=1001&h=715&fit=fill 1001w
+                      ${image.fields.file.url}?fm=jpg&fl=progressive&w=301&h=215&fit=fill 301w,
+                      ${image.fields.file.url}?fm=jpg&fl=progressive&w=602&h=430&fit=fill 602w,
+                      ${image.fields.file.url}?fm=jpg&fl=progressive&w=1001&h=715&fit=fill 1001w
                     `}
                     sizes='33vw'
                     alt={image.fields.title} />
-                  <img src={`${image.fields.file.url}?w=156&h=156&fit=fill`} alt={image.fields.title} />
+                  <img src={`${image.fields.file.url}?fm=jpg&fl=progressive&w=156&h=156&fit=fill`} alt={image.fields.title} />
                 </picture>
               </li>
             ))}
