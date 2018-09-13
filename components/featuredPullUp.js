@@ -3,7 +3,7 @@ import breakpoints from '../common/breakpoints'
 
 export default ({ products }) => (
   <ul className='featured-pu'>
-    {products.map((product, index) => (
+    {products.map(( product, index ) => (
       <li key={index}><FeaturedProductCard product={product} /></li>
     ))}
 
@@ -38,14 +38,6 @@ export default ({ products }) => (
 
     <style jsx>{`
       @media screen and (min-width: ${breakpoints.large}) {
-        .featured-pu li {
-          margin-bottom: 70px;
-        }
-      }
-    `}</style>
-
-    <style jsx>{`
-      @media screen and (min-width: ${breakpoints.xlarge}) {
         .featured-pu {
           display: flex;
           width: auto;
@@ -67,7 +59,7 @@ export default ({ products }) => (
     `}</style>
 
     <style jsx>{`
-      @media screen and (min-width: ${breakpoints.xxlarge}) {
+      @media screen and (min-width: ${breakpoints.xlarge}) {
         .featured-pu {
           margin: 0 -1.761006289% 152px -1.761006289%;
         }

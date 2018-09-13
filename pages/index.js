@@ -1,7 +1,7 @@
 
 import React from 'react'
 import FeaturedPullUp from '../components/featuredPullUp'
-import PageHeading from '../components/pageHeading'
+// import PageHeading from '../components/pageHeading'
 import Wysiwyg from '../components/wysiwyg'
 import breakpoints from '../common/breakpoints'
 import SocialMetaFields from '../components/socialMetaFields'
@@ -35,7 +35,8 @@ export default class extends React.Component {
           path='/'
         />
         <div className='home'>
-          {products.total > 1 ? <PageHeading heading='Our products' /> : ''}
+          {/* Uncomment the line below (and the import above) to show the page heading */}
+          {/*  products.total > 1 ? <PageHeading heading='Our products' /> : '' */}
           <FeaturedPullUp products={products.items} />
           {content.items.length > 0 &&
             <div className='home__content'>

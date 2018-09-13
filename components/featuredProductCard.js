@@ -34,7 +34,7 @@ export default ({ product }) => (
 
         .featured-product-card__title {
           position: relative;
-          display: flex;
+          display: none; /* change to display: flex; to show the name and price */
           width: 100%;
           justify-content: space-between;
           align-items: flex-end;
